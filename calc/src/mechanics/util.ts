@@ -104,7 +104,8 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
       (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
       (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
       (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow'].includes(weather)) ||
-      (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
+      (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric') ||
+      (pokemon.hasAbility('Arbor Flow') && terrain === 'Grassy') 
   ) {
     speedMods.push(8192);
   } else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
@@ -271,6 +272,7 @@ export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
     affectedSide.isAuroraVeil = false;
   }
 }
+
 
 export function checkSeedBoost(pokemon: Pokemon, field: Field) {
   if (!pokemon.item) return;

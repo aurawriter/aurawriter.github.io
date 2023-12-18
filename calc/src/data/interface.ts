@@ -27,7 +27,7 @@ export type NatureName =
 
 export type TypeName =
   'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
-  'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
+  'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | 'Light' |'Cosmic'| '???';
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 
@@ -94,6 +94,7 @@ export interface MoveFlags {
   pulse?: 1 | 0;
   slicing?: 1 | 0;
   wind?: 1| 0;
+  kick?: 1 | 0;
 }
 
 export interface SelfOrSecondaryEffect {

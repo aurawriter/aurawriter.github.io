@@ -209,10 +209,12 @@ export function calculateSMSSSV(
   let hasAteAbilityTypeChange = false;
   let isAerilate = false;
   let isPixilate = false;
+  let isIlluminate = false;
   let isRefrigerate = false;
   let isGalvanize = false;
   let isLiquidVoice = false;
   let isNormalize = false;
+  let isDragonheart = false;
   const noTypeChange = move.named(
     'Revelation Dance',
     'Judgment',
@@ -237,7 +239,14 @@ export function calculateSMSSSV(
       type = 'Fairy';
     } else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
       type = 'Ice';
-    } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
+    } 
+    else if ((isDragonheart = attacker.hasAbility('Dragonheart') && normal)) {
+     type = 'Dragon';
+    }
+    else if ((isIlluminate = attacker.hasAbility('Illuminate') && normal)) {
+        type = 'Light';
+    }
+    else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
       type = 'Normal';
     }
     if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize) {
@@ -257,8 +266,7 @@ export function calculateSMSSSV(
   // FIXME: this is incorrect, should be move.flags.heal, not move.drain
   if ((attacker.hasAbility('Triage') && move.drain) ||
       (attacker.hasAbility('Gale Wings') &&
-       move.hasType('Flying') &&
-       attacker.curHP() === attacker.maxHP())) {
+       move.hasType('Flying'))) {
     move.priority = 1;
     desc.attackerAbility = attacker.ability;
   }
@@ -351,7 +359,9 @@ export function calculateSMSSSV(
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
       (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
-      (move.flags.wind && defender.hasAbility('Wind Rider'))
+      (move.flags.wind && defender.hasAbility('Wind Rider')) ||
+      (move.hasType('Cosmic') && defender.hasAbility('Chaotic Void')) || 
+      (move.hasType('Light') && defender.hasAbility('Radiant Order')) 
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -377,7 +387,7 @@ export function calculateSMSSSV(
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
-    if (attacker.hasAbility('Parental Bond')) {
+    if (attacker.hasAbility('Parental Bond') || (attacker.hasAbility('Duet') && move.flags.sound)) {
       result.damage = [fixedDamage, fixedDamage];
       desc.attackerAbility = attacker.ability;
     } else {
@@ -497,7 +507,7 @@ export function calculateSMSSSV(
   let stabMod = 4096;
   if (attacker.hasOriginalType(move.type)) {
     stabMod += 2048;
-  } else if (attacker.hasAbility('Protean', 'Libero') && !attacker.teraType) {
+  } else if (attacker.hasAbility('Protean') && !attacker.teraType) {
     stabMod += 2048;
     desc.attackerAbility = attacker.ability;
   }
@@ -1018,7 +1028,7 @@ export function calculateBPModsSMSSSV(
       attacker.hasStatus('brn') && move.category === 'Special') ||
     (attacker.hasAbility('Toxic Boost') &&
       attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
-    (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+    (attacker.hasAbility('Mega Launcher') && (move.flags.pulse || move.flags.bullet)) ||
     (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
     (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
     (attacker.hasAbility('Sharpness') && move.flags.slicing)
@@ -1026,7 +1036,10 @@ export function calculateBPModsSMSSSV(
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
   }
-
+  if((attacker.hasAbility('Bad Guy')) && move.hasType('Dark') && move.name != "Power Trip") {
+      basePower =  basePower + 20 * countBoosts(gen, attacker.boosts);
+      desc.moveBP = basePower;
+  }
   const aura = `${move.type} Aura`;
   const isAttackerAura = attacker.hasAbility(aura);
   const isDefenderAura = defender.hasAbility(aura);
@@ -1091,7 +1104,8 @@ export function calculateBPModsSMSSSV(
   }
 
   if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
-      (attacker.hasAbility('Iron Fist') && move.flags.punch)
+      (attacker.hasAbility('Iron Fist') && move.flags.punch) ||
+      (attacker.hasAbility('Deadly Kicks') && move.flags.kick)
   ) {
     bpMods.push(4915);
     desc.attackerAbility = attacker.ability;
@@ -1234,6 +1248,11 @@ export function calculateAtModsSMSSSV(
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
+  } 
+  else if(attacker.hasAbility('Alpine Training') && field.hasWeather('Hail','Snow')) {
+    atMods.push(6144);
+    desc.attackerAbility = attacker.ability;
+    desc.weather = field.weather;
   } else if (
     // Gorilla Tactics has no effect during Dynamax (Anubis)
     (attacker.hasAbility('Gorilla Tactics') && move.category === 'Physical' &&
@@ -1278,6 +1297,10 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
     (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
   ) {
+    atMods.push(8192);
+    desc.attackerAbility = attacker.ability;
+  }
+  else if(attacker.hasAbility('Enlightenment') && move.category === 'Special') {
     atMods.push(8192);
     desc.attackerAbility = attacker.ability;
   }
@@ -1593,6 +1616,9 @@ export function calculateFinalModsSMSSSV(
   }
 
   if (defender.hasAbility('Fluffy') && move.flags.contact && !attacker.hasAbility('Long Reach')) {
+    finalMods.push(2048);
+    desc.defenderAbility = defender.ability;
+  } else if(defender.name === 'Calikami-Radiant' && defender.hasAbility('Dusk Till Dawn')) { //potentially stupid work around for not understanding how to check if its the first turn out
     finalMods.push(2048);
     desc.defenderAbility = defender.ability;
   } else if (
