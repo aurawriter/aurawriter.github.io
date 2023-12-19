@@ -159,7 +159,7 @@ export function getMoveEffectiveness(
   else if(move.named('Prismatic Pyre')) {
     return (
       gen.types.get('fire' as ID)!.effectiveness[type]! *
-      gen.types.get('light' as ID)!.effectivness[type]!
+      gen.types.get('light' as ID)!.effectiveness[type]!
     );
   } else {
     return gen.types.get(toID(move.type))!.effectiveness[type]!;

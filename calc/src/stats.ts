@@ -38,6 +38,8 @@ const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>; dvs: Partial<StatsTa
   Rock: {ivs: {def: 30, spd: 30, spe: 30}, dvs: {atk: 13, def: 12}},
   Steel: {ivs: {spd: 30}, dvs: {atk: 13}},
   Water: {ivs: {atk: 30, def: 30, spa: 30}, dvs: {atk: 14, def: 13}},
+  Light: {ivs: {atk: 30,def: 30, spa: 30}, dvs: {atk: 13, def: 13}},
+  Cosmic:  {ivs: {atk: 30,def: 27, spa: 31}, dvs: {atk: 16, def: 13}},
 };
 
 export const Stats = new (class {
