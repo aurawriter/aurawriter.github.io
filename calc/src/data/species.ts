@@ -10330,7 +10330,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Abysmatoth: {
     types: ['Cosmic','Dark'],
-    bs: {hp: 140, at: 140, df: 110, sa: 80, sd: 110,sp: 110},
+    bs: {hp: 140, at: 140, df: 110, sa: 80, sd: 110,sp: 100},
     weightkg: 330,
     abilities: {0: 'Chaotic Void'},
   },
