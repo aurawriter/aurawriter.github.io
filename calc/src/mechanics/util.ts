@@ -147,10 +147,19 @@ export function getMoveEffectiveness(
     return 1;
   } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;
-  } else if (move.named('Flying Press')) {
+  } else if(move.named('Accretion Disk') && type === 'Light') {
+    return 2;
+  }
+  else if (move.named('Flying Press')) {
     return (
       gen.types.get('fighting' as ID)!.effectiveness[type]! *
       gen.types.get('flying' as ID)!.effectiveness[type]!
+    );
+  }
+  else if(move.named('Prismatic Pyre')) {
+    return (
+      gen.types.get('fire' as ID)!.effectiveness[type]! *
+      gen.types.get('light' as ID)!.effectivness[type]!
     );
   } else {
     return gen.types.get(toID(move.type))!.effectiveness[type]!;

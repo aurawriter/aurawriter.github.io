@@ -491,6 +491,20 @@ const SV = SS.concat([
   'Syrupy Apple',
   'Unremarkable Teacup',
   'Wellspring Mask',
+  'Choice Edge',
+  'Chrome Armor',
+  'Cosmic Berry',
+  'Cosmic Gem',
+  'Cosmic Memory',
+  'Flashlight',
+  'Heavy Rock',
+  'Light Berry',
+  'Light Gem',
+  'Light Memory',
+  'Nebula Plate',
+  'Radiant Plate',
+  'Safari Helmet',
+  'Telescope',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {

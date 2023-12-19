@@ -9033,7 +9033,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Thermal Exchange'},
   },
   Bellibolt: {
-    types: ['Electric'],
+    types: ['Electric','Light'],
     bs: {hp: 109, at: 64, df: 91, sa: 103, sd: 83, sp: 45},
     weightkg: 113,
     abilities: {0: 'Electromorphosis'},
@@ -9785,7 +9785,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Squawkabilly',
   },
   Tadbulb: {
-    types: ['Electric'],
+    types: ['Electric','Light'],
     bs: {hp: 61, at: 31, df: 41, sa: 59, sd: 35, sp: 45},
     weightkg: 0.4,
     abilities: {0: 'Own Tempo'},
@@ -9937,6 +9937,456 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 35, at: 100, df: 50, sa: 50, sd: 70, sp: 120},
     weightkg: 5.4,
     abilities: {0: 'Gooey'},
+  },
+  Arbok: {
+    types: ['Poison','Dark'],
+  },
+  Cleffa: {
+    types: ['Fairy','Cosmic'],
+  },
+  Clefairy: {
+    types: ['Fairy','Cosmic'],
+  },
+  Clefable: {
+    types: ['Fairy','Cosmic'],
+  },
+  Ninetales: {
+    types: ['Fire','Fairy'],
+  },
+  Golduck: {
+    types: ['Water','Psychic'],
+  },
+  Ledyba: {
+    types: ['Bug','Cosmic'],
+  },
+  Ledian: {
+    types: ['Bug','Cosmic'],
+  },
+  Mareep: {
+    types: ['Electric','Light'],
+  },
+  Flaaffy: {
+    types: ['Electric','Light'],
+  },
+  Ampharos: {
+    types: ['Electric','Light'],
+  },
+  Bellossom: {
+    types: ['Grass','Light'],
+  },
+  Sunflora: {
+    types: ['Grass','Light'],
+  },
+  Volbeat: {
+    types: ['Bug','Light'],
+  },
+  Illumise: {
+    types: ['Bug','Light'],
+  },
+  Lunatone: {
+    types: ['Rock','Cosmic'],
+  },
+  Solrock: {
+    types: ['Rock','Light'],
+  },
+  Milotic: {
+    types: ['Water','Fairy'],
+  },
+  Shuppet: {
+    types: ['Ghost','Normal'],
+  },
+  Banette: {
+    types: ['Ghost','Normal']
+  },
+  Glalie: {
+    types: ['Ice','Dark']
+  },
+  Huntail: {
+    types: ['Water','Light'],
+  },
+  Gorebyss: {
+    types: ['Water','Fairy'],
+  },
+  Deoxys: {
+    types: ['Psychic','Cosmic'],
+  },
+  "Deoxys-Attack": {
+    types: ['Psychic','Cosmic'],
+  },
+  "Deoxys-Defense": {
+    types: ['Psychic','Cosmic'],
+  },
+  "Deoxys-Speed": {
+    types: ['Psychic','Cosmic'],
+  },
+  Luxio: {
+    types: ['Electric','Light'],
+  },
+  Luxray: {
+    types: ['Electric', 'Light'],
+  },
+  Cherrim: {
+    types: ['Grass','Light'],
+  },
+  Lumineon: {
+    types: ['Water','Light'],
+  },
+  Palkia: {
+    types: ['Cosmic','Dragon'],
+  },
+  Servine: {
+    types: ['Grass','Light'],
+  },
+  Serperior: {
+    types: ['Grass','Light'],
+  },
+  Dewott: {
+    types: ['Water','Fighting'],
+  },
+  Samurott: {
+    types: ['Water','Fighting'],
+  },
+  Boldore: {
+    types: ['Rock','Light'],
+  },
+  Gigalith: {
+    types: ['Rock','Light'],
+  },
+  Petilil: {
+    types: ['Grass','Fairy'],
+  },
+  Lilligant: {
+    types: ['Grass','Fairy'],
+  },
+  Gothorita: {
+    types: ['Psychic','Cosmic'],
+  },
+  Gothitelle: {
+    types: ['Psychic','Cosmic'],
+  },
+  Elgyem: {
+    types: ['Psychic','Cosmic'],
+  },
+  Beheeyem: {
+    types: ['Psychic','Cosmic'],
+  },
+  Helioptile: {
+    types: ['Electric','Light'],
+  },
+  Heliolisk: {
+    types: ['Electric','Light'],
+  },
+  Goodra: {
+    types: ['Dragon','Water'],
+  },
+  Hoopa: {
+    types: ['Psychic','Cosmic'],
+  },
+  Lycanroc: {
+    types: ['Rock','Normal'],
+  },
+  "Lycanroc-Midnight": {
+    types: ['Rock','Dark'],
+  },
+  Minior: {
+    types: ['Rock','Cosmic'],
+  },
+  Cosmog: {
+    types: ['Cosmic'],
+  },
+  Cosmoem: {
+    types: ['Cosmic'],
+  },
+  Solgaleo: {
+    types: ['Light','Steel'],
+  },
+  'Necrozma-Dusk-Mane': {
+    types: ['Light','Steel'],
+  },
+  Lunala: {
+    types: ['Cosmic','Ghost'],
+  },
+  'Necrozma-Dawn-Wings': {
+    types: ['Cosmic','Ghost'],
+  },
+  Xurkitree: {
+    types: ['Electric','Ghost'],
+  },
+  'Necrozma': {
+    types: ['Cosmic','Light'],
+  },
+  'Necrozma-Ultra': {
+    types: ['Light','Dragon'],
+  },
+  Dottler: {
+    types: ['Bug','Cosmic'],
+  },
+  Orbeetle: {
+    types: ['Bug','Cosmic'],
+  },
+  Arachnorok: {
+    types: ['Bug','Dragon'],
+    bs: {hp: 135, at: 150, df: 112, sa: 105, sd: 55, sp: 43},
+    weightkg: 144,
+    abilities: {0: 'Compound Eyes'},
+  },
+  Arjibee: {
+    types: ['Bug','Light'],
+    bs: {hp: 65, at: 95, df: 65, sa: 109, sd: 95, sp: 125},
+    weightkg: 5,
+    abilities: {0: 'Dazzling'},
+  },
+  Maginata: {
+    types: ['Fire','Fairy'],
+    bs: {hp: 100, at: 55, df: 90, sa: 95, sd: 90,sp: 100},
+    weightkg: 110,
+    abilities: {0: 'Blaze'},
+  },
+  Muertaguar: {
+    types: ['Water','Ghost'],
+    bs: {hp: 120, at: 80, df: 75, sa: 110, sd: 55,sp: 90},
+    weightkg: 30,
+    abilities: {0: 'Torrent'},
+  },
+  Macquero: {
+    types: ['Grass','Fighting'],
+    bs: {hp: 75, at: 122, df: 60, sa: 95, sd: 78,sp: 100},
+    weightkg: 12,
+    abilities: {0: 'Overgrow'},
+  },
+  Xinfernotl: {
+    types: ['Fire','Light'],
+    bs: {hp: 90, at: 70, df: 80, sa: 100, sd: 80,sp: 110},
+    weightkg: 63,
+    abilities: {0: 'Blaze'},
+  },
+  Waplati: {
+    types: ['Grass','Steel'],
+    bs: {hp: 65, at: 110, df: 90, sa: 110, sd: 90,sp: 65},
+    weightkg: 142,
+    abilities: {0: 'Overgrow'},
+  },
+  Galeusair: {
+    types: ['Water','Flying'],
+    bs: {hp: 80, at: 125, df: 85, sa: 80, sd: 80,sp: 80},
+    weightkg: 88.8,
+    abilities: {0: 'Torrent'},
+  },
+  Kobolder: {
+    types: ['Rock','Electric'],
+    bs: {hp: 77, at: 55, df: 90, sa: 115, sd: 75,sp: 115},
+    weightkg: 89.9,
+    abilities: {0: 'Lightning Rod'},
+  },
+  Ickvader: {
+    types: ['Cosmic','Poison'],
+    bs: {hp: 90, at: 45, df: 95, sa: 85, sd: 125,sp: 88},
+    weightkg: 89.9,
+    abilities: {0: 'Lightning Rod'},
+  },
+  Squittack: {
+    types: ['Water','Fighting'],
+    bs: {hp: 90, at: 115, df: 85, sa: 80, sd: 90,sp: 70},
+    weightkg: 55,
+    abilities: {0: 'Own Tempo'},
+  },
+  Floraune: {
+    types: ['Grass','Poison'],
+    bs: {hp: 85, at: 109, df: 96, sa: 110, sd: 55,sp: 60},
+    weightkg: 130.3,
+    abilities: {0: 'Intimidate'},
+  },
+  'Gardevoir-Aurora': {
+    types: ['Light','Fairy'],
+    bs: {hp: 68, at: 65, df: 65, sa: 125, sd: 115,sp: 80},
+    weightkg: 48.4,
+    abilities: {0: 'Queenly Majesty'},
+  },
+  'Gallade-Aurora': {
+    types: ['Light','Fighting'],
+    bs: {hp: 68, at: 65, df: 125, sa: 55, sd: 125,sp: 80},
+    weightkg: 52,
+    abilities: {0: 'Steadfast'},
+  },
+  Dwelmet: {
+    types: ['Ground','Light'],
+    bs: {hp: 130, at: 90, df: 78, sa: 75, sd: 65,sp: 70},
+    weightkg: 112.8,
+    abilities: {0: 'Rocky Payload'},
+  },
+  Harmonkey: {
+    types: ['Psychic','Light'],
+    bs: {hp: 85, at: 70, df: 80, sa: 60, sd: 80,sp: 90},
+    weightkg: 82.8,
+    abilities: {0: 'Inner Focus'},
+  },
+  Gaveliant: {
+    types: ['Light'],
+    bs: {hp: 60, at: 95, df: 115, sa: 95, sd: 115,sp: 60},
+    weightkg: 112.8,
+    abilities: {0: 'Mirror Armor'},
+  },
+  Glowker: {
+    types: ['Light'],
+    bs: {hp: 120, at: 85, df: 70, sa: 70, sd: 80,sp: 75},
+    weightkg: 30,
+    abilities: {0: 'Dazzling'},
+  },
+  Soloth: {
+    types: ['Light'],
+    bs: {hp: 95, at: 100, df: 80, sa: 40, sd: 90,sp: 50},
+    weightkg: 80.8,
+    abilities: {0: 'Oblivious'},
+  },
+  Cherubid: {
+    types: ['Flying','Light'],
+    bs: {hp: 55, at: 95, df: 60, sa: 70, sd: 105,sp: 115},
+    weightkg: 30.4,
+    abilities: {0: 'Cute Charm'},
+  },
+  Anglare: {
+    types: ['Poison','Light'],
+    bs: {hp: 105, at: 110, df: 60, sa: 90, sd: 60,sp: 105},
+    weightkg: 30.4,
+    abilities: {0: 'Natural Cure'},
+  },
+  Shino: {
+    types: ['Light','Ice'],
+    bs: {hp: 130, at: 100, df: 100, sa: 50, sd: 100,sp: 30},
+    weightkg: 240.4,
+    abilities: {0: 'Thick Fat'},
+  },
+  Dribblowisp: {
+    types: ['Ghost','Light'],
+    bs: {hp: 40, at: 60, df: 40, sa: 80, sd: 105,sp: 120},
+    weightkg: 240.4,
+    abilities: {0: 'Limber'},
+  },
+  Calikami: {
+    types: ['Dark','Light'],
+    bs: {hp: 100, at: 80, df: 75, sa: 115, sd: 90,sp: 120},
+    weightkg: 60.7,
+    abilities: {0: 'Dusk Till Dawn'},
+  },
+  'Calikami-Radiant': {
+    types: ['Dark','Light'],
+    bs: {hp: 100, at: 80, df: 75, sa: 115, sd: 90,sp: 120},
+    weightkg: 60.7,
+    abilities: {0: 'Dusk Till Dawn'},
+  },
+  Masqutirade: {
+    types: ['Dark'],
+    bs: {hp: 60, at: 95, df: 55, sa: 95, sd: 65,sp: 120},
+    weightkg: 32.8,
+    abilities: {0: 'Center Stage'},
+  },
+  Kitsolune: {
+    types: ['Fire','Cosmic'],
+    bs: {hp: 80, at: 70, df: 70, sa: 110, sd: 80,sp: 80},
+    weightkg: 20.4,
+    abilities: {0: 'Rattled'},
+  },
+  Jackalipse: {
+    types: ['Cosmic','Normal'],
+    bs: {hp: 65, at: 100, df: 80, sa: 110, sd: 90,sp: 80},
+    weightkg: 54,
+    abilities: {0: 'Serene Grace'},
+  },
+  Herastroid: {
+    types: ['Cosmic','Fighting'],
+    bs: {hp: 80, at: 40, df: 75, sa: 125, sd: 95,sp: 85},
+    weightkg: 54,
+    abilities: {0: 'Fusion'},
+  },
+  Martsunami: {
+    types: ['Cosmic','Water'],
+    bs: {hp: 100, at: 95, df: 95, sa: 80, sd: 73,sp: 90},
+    weightkg: 330,
+    abilities: {0: 'Gravity Well'},
+  },
+  Flocket: {
+    types: ['Cosmic','Flying'],
+    bs: {hp: 70, at: 88, df: 67, sa: 60, sd: 73,sp: 90},
+    weightkg: 38,
+    abilities: {0: 'Escape Velocity'},
+  },
+  Hamstronaut: {
+    types: ['Electric','Cosmic'],
+    bs: {hp: 50, at: 110, df: 65, sa: 70, sd: 60,sp: 75},
+    weightkg: 3,
+    abilities: {0: 'Hamster Ball'},
+  },
+  Stegangaea: {
+    types: ['Ground','Cosmic'],
+    bs: {hp: 120, at: 118, df: 67, sa: 45, sd: 95,sp: 50},
+    weightkg: 149.5,
+    abilities: {0: 'Battle Armor'},
+  },
+  Braxnoir: {
+    types: ['Ghost','Cosmic'],
+    bs: {hp: 65, at: 45, df: 120, sa: 100, sd: 115,sp: 80},
+    weightkg: 106.6,
+    abilities: {0: 'Pressure'},
+  },
+  Abysmatoth: {
+    types: ['Cosmic','Dark'],
+    bs: {hp: 140, at: 140, df: 110, sa: 80, sd: 110,sp: 110},
+    weightkg: 330,
+    abilities: {0: 'Chaotic Void'},
+  },
+  Pristeraph: {
+    types: ['Light','Water'],
+    bs: {hp: 140, at: 100, df: 110, sa: 140, sd: 110,sp: 80},
+    weightkg: 330,
+    abilities: {0: 'Chaotic Void'},
+  },
+  Redover: {
+    types: ['Steel','Cosmic'],
+    bs: {hp: 40, at: 114, df: 65, sa: 120, sd: 47,sp: 98},
+    weightkg: 14.9,
+    abilities: {0: 'Download'},
+  },
+  Astreon: {
+    types: ['Cosmic'],
+    bs: {hp: 110, at: 65, df: 130, sa: 60, sd: 95,sp: 65},
+    weightkg: 26.5,
+    abilities: {0: 'Cloud Nine'},
+  },
+  Illumeon: {
+    types: ['Light'],
+    bs: {hp: 65, at: 65, df: 60, sa: 130, sd: 95,sp: 110},
+    weightkg: 26.5,
+    abilities: {0: 'Illuminate'},
+  },
+  Greydengo: {
+    types: ['Cosmic'],
+    bs: {hp: 87, at: 60, df: 95, sa: 133, sd: 91,sp: 84},
+    weightkg: 30,
+    abilities: {0: 'Silver Lining'},
+  },
+  Stellangel: {
+    types: ['Ice','Cosmic'],
+    bs: {hp: 90, at: 100, df: 55, sa: 94, sd: 63,sp: 110},
+    weightkg: 5.1,
+    abilities: {0: 'Stardom'},
+  },
+  'Sunflora-Aurora': {
+    types: ['Grass','Cosmic'],
+    bs: {hp: 70, at: 70, df: 50, sa: 120, sd: 30,sp: 85},
+    weightkg: 8.5,
+    abilities: {0: 'Chlorophyll'},
+  },
+  Moonster: {
+    types: ['Cosmic'],
+    bs: {hp: 78, at: 84, df: 95, sa: 65, sd: 90,sp: 55},
+    weightkg: 180,
+    abilities: {0: 'Tidal Force'},
+  },
+  Lunarch: {
+    types: ['Bug','Cosmic'],
+    bs: {hp: 124, at: 80, df: 55, sa: 86, sd: 50,sp: 50},
+    weightkg: 32,
+    abilities: {0: 'Shield Dust'},
   },
 };
 

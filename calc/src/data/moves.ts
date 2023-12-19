@@ -40,6 +40,7 @@ export interface MoveData {
   readonly isPulse?: boolean;
   readonly isSlicing?: boolean;
   readonly isWind?: boolean;
+  readonly isKick?: boolean;
 }
 
 const RBY: {[name: string]: MoveData} = {
@@ -67,7 +68,7 @@ const RBY: {[name: string]: MoveData} = {
   Disable: {bp: 0, category: 'Status', type: 'Normal'},
   'Dizzy Punch': {bp: 70, type: 'Normal'},
   'Double-Edge': {bp: 100, type: 'Normal', recoil: [25, 100]},
-  'Double Kick': {bp: 30, type: 'Fighting', multihit: 2},
+  'Double Kick': {bp: 30, type: 'Fighting', multihit: 2, isKick: true},
   'Double Slap': {bp: 15, type: 'Normal', multihit: [2, 5]},
   'Dragon Rage': {bp: 1, type: 'Dragon'},
   'Dream Eater': {bp: 100, type: 'Psychic', drain: [1, 2]},
@@ -85,10 +86,10 @@ const RBY: {[name: string]: MoveData} = {
   Guillotine: {bp: 0, type: 'Normal'},
   Gust: {bp: 40, type: 'Normal'},
   Haze: {bp: 0, category: 'Status', type: 'Ice'},
-  'High Jump Kick': {bp: 85, type: 'Fighting', hasCrashDamage: true},
+  'High Jump Kick': {bp: 85, type: 'Fighting', hasCrashDamage: true, isKick: true},
   'Horn Drill': {bp: 0, type: 'Normal'},
   'Hyper Beam': {bp: 150, type: 'Normal'},
-  'Jump Kick': {bp: 70, type: 'Fighting', hasCrashDamage: true},
+  'Jump Kick': {bp: 70, type: 'Fighting', hasCrashDamage: true, isKick: true},
   'Karate Chop': {bp: 50, type: 'Normal'},
   'Leech Seed': {bp: 0, category: 'Status', type: 'Grass'},
   'Light Screen': {bp: 0, category: 'Status', type: 'Psychic'},
@@ -122,7 +123,7 @@ const RBY: {[name: string]: MoveData} = {
   'Solar Beam': {bp: 120, type: 'Grass'},
   'Sonic Boom': {bp: 1, type: 'Normal'},
   'Spike Cannon': {bp: 20, type: 'Normal', multihit: [2, 5]},
-  Stomp: {bp: 65, type: 'Normal'},
+  Stomp: {bp: 65, type: 'Normal',isKick: true},
   Struggle: {bp: 50, type: 'Normal', recoil: [1, 2]},
   'Stun Spore': {bp: 0, category: 'Status', type: 'Grass'},
   Submission: {bp: 80, type: 'Fighting', recoil: [1, 4]},
@@ -141,7 +142,7 @@ const RBY: {[name: string]: MoveData} = {
   Wrap: {bp: 15, type: 'Normal'},
   Growl: {bp: 0, category: 'Status', type: 'Normal'},
   Leer: {bp: 0, category: 'Status', type: 'Normal'},
-  'Low Kick': {bp: 50, type: 'Fighting'},
+  'Low Kick': {bp: 50, type: 'Fighting', isKick: true},
   'Poison Gas': {bp: 0, category: 'Status', type: 'Poison'},
   'Poison Powder': {bp: 0, category: 'Status', type: 'Poison'},
   'Sky Attack': {bp: 140, type: 'Flying'},
@@ -149,7 +150,7 @@ const RBY: {[name: string]: MoveData} = {
   Surf: {bp: 95, type: 'Water'},
   'Tail Whip': {bp: 0, category: 'Status', type: 'Normal'},
   Toxic: {bp: 0, category: 'Status', type: 'Poison'},
-  Flash: {bp: 0, category: 'Status', type: 'Normal'},
+  Flash: {bp: 0, category: 'Status', type: 'Light'},
   Hypnosis: {bp: 0, category: 'Status', type: 'Psychic'},
   'Leech Life': {bp: 20, type: 'Bug', drain: [1, 2]},
   'Mega Drain': {bp: 40, type: 'Grass', drain: [1, 2]},
@@ -177,7 +178,7 @@ const RBY: {[name: string]: MoveData} = {
   Kinesis: {bp: 0, category: 'Status', type: 'Psychic'},
   'Lovely Kiss': {bp: 0, category: 'Status', type: 'Normal'},
   Meditate: {bp: 0, category: 'Status', type: 'Psychic'},
-  'Rolling Kick': {bp: 60, type: 'Fighting'},
+  'Rolling Kick': {bp: 60, type: 'Fighting', isKick: true},
   Sharpen: {bp: 0, category: 'Status', type: 'Normal'},
   Teleport: {bp: 0, category: 'Status', type: 'Psychic'},
   Agility: {bp: 0, category: 'Status', type: 'Psychic'},
@@ -192,7 +193,7 @@ const RBY: {[name: string]: MoveData} = {
   Headbutt: {bp: 70, type: 'Normal'},
   'Horn Attack': {bp: 65, type: 'Normal'},
   'Ice Punch': {bp: 75, type: 'Ice'},
-  'Mega Kick': {bp: 120, type: 'Normal'},
+  'Mega Kick': {bp: 120, type: 'Normal', isKick: true},
   'Mega Punch': {bp: 80, type: 'Normal'},
   'Paleo Wave': {bp: 85, type: 'Rock'},
   'Pay Day': {bp: 40, type: 'Normal'},
@@ -252,7 +253,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Mind Reader': {bp: 0, category: 'Status', type: 'Normal'},
   'Mirror Coat': {bp: 0, type: 'Psychic'},
   Moonlight: {bp: 0, category: 'Status', type: 'Normal'},
-  'Morning Sun': {bp: 0, category: 'Status', type: 'Normal'},
+  'Morning Sun': {bp: 0, category: 'Status', type: 'Light'},
   Nightmare: {bp: 0, category: 'Status', type: 'Ghost'},
   Outrage: {bp: 90, type: 'Dragon'},
   'Powder Snow': {bp: 40, type: 'Ice'},
@@ -273,7 +274,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Sweet Scent': {bp: 0, category: 'Status', type: 'Normal'},
   Synthesis: {bp: 0, category: 'Status', type: 'Grass'},
   Thief: {bp: 40, type: 'Dark'},
-  'Triple Kick': {bp: 10, type: 'Fighting', multihit: [1, 3]},
+  'Triple Kick': {bp: 10, type: 'Fighting', multihit: [1, 3],isKick: true},
   Twister: {bp: 40, type: 'Dragon'},
   'Ancient Power': {bp: 60, type: 'Rock'},
   'Bone Rush': {bp: 25, type: 'Ground', multihit: [2, 5]},
@@ -515,7 +516,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Tail Glow': {bp: 0, category: 'Status', type: 'Bug'},
   Torment: {bp: 0, category: 'Status', type: 'Dark'},
   'Water Sport': {bp: 0, category: 'Status', type: 'Water'},
-  Wish: {bp: 0, category: 'Status', type: 'Normal'},
+  Wish: {bp: 0, category: 'Status', type: 'Cosmic'},
   'Air Cutter': {bp: 55, type: 'Flying', target: 'allAdjacentFoes'},
   Facade: {bp: 70, type: 'Normal', makesContact: true},
   'Grass Whistle': {bp: 0, category: 'Status', type: 'Grass', isSound: true},
@@ -538,10 +539,10 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Silver Wind': {bp: 60, type: 'Bug'},
   'Aerial Ace': {bp: 60, type: 'Flying', makesContact: true},
   'Blast Burn': {bp: 150, type: 'Fire'},
-  'Blaze Kick': {bp: 85, type: 'Fire', makesContact: true},
+  'Blaze Kick': {bp: 85, type: 'Fire', makesContact: true, isKick: true},
   'Bulk Up': {bp: 0, category: 'Status', type: 'Fighting'},
   'Calm Mind': {bp: 0, category: 'Status', type: 'Psychic'},
-  'Cosmic Power': {bp: 0, category: 'Status', type: 'Psychic'},
+  'Cosmic Power': {bp: 0, category: 'Status', type: 'Cosmic'},
   'Crush Claw': {bp: 75, type: 'Normal', makesContact: true},
   'Dragon Claw': {bp: 80, type: 'Dragon', makesContact: true},
   'Dragon Dance': {bp: 0, category: 'Status', type: 'Dragon'},
@@ -876,7 +877,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
   },
   Fling: {bp: 0, type: 'Dark', category: 'Physical'},
-  Gravity: {bp: 0, type: 'Psychic'},
+  Gravity: {bp: 0, type: 'Cosmic'},
   'Head Smash': {
     bp: 150,
     type: 'Rock',
@@ -894,7 +895,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
   },
   'Lucky Chant': {bp: 0, type: 'Normal'},
-  'Lunar Dance': {bp: 0, type: 'Psychic'},
+  'Lunar Dance': {bp: 0, type: 'Cosmic'},
   'Magma Storm': {bp: 120, type: 'Fire', category: 'Special'},
   'Magnet Rise': {bp: 0, type: 'Electric'},
   'Me First': {bp: 0, type: 'Normal'},
@@ -1011,7 +1012,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
   },
   'Seed Flare': {bp: 120, type: 'Grass', category: 'Special'},
-  'Spacial Rend': {bp: 100, type: 'Dragon', category: 'Special'},
+  'Spacial Rend': {bp: 100, type: 'Cosmic', category: 'Special'},
   'Trump Card': {
     bp: 0,
     type: 'Normal',
@@ -1666,7 +1667,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Wild Charge': {
     bp: 90,
     type: 'Electric',
-    recoil: [1, 4],
+    // recoil: [1, 4],
     makesContact: true,
     category: 'Physical',
   },
@@ -1801,7 +1802,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Hyperspace Hole': {
     bp: 80,
-    type: 'Psychic',
+    type: 'Cosmic',
     breaksProtect: true,
     category: 'Special',
   },
@@ -2499,7 +2500,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Light That Burns the Sky': {
     bp: 200,
-    type: 'Psychic',
+    type: 'Light',
     category: 'Special',
     isZ: true,
   },
@@ -2706,7 +2707,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Moongeist Beam': {bp: 100, type: 'Ghost', category: 'Special', zp: 180},
   'Photon Geyser': {
     bp: 100,
-    type: 'Psychic',
+    type: 'Light',
     category: 'Special',
     zp: 180,
   },
@@ -2733,7 +2734,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 160,
   },
-  'Prismatic Laser': {bp: 160, type: 'Psychic', category: 'Special', zp: 200},
+  'Prismatic Laser': {bp: 160, type: 'Light', category: 'Special', zp: 200},
   'Psychic Fangs': {
     bp: 85,
     type: 'Psychic',
@@ -2812,6 +2813,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     secondaries: true,
     zp: 140,
+    isKick: true,
   },
   'Veevee Volley': {
     bp: 0,
@@ -3451,7 +3453,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Meteor Beam': {
     bp: 120,
-    type: 'Rock',
+    type: 'Cosmic',
     category: 'Special',
     zp: 190,
     maxPower: 140,
@@ -3607,6 +3609,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     multihit: 3,
     zp: 120,
     maxPower: 140,
+    isKick: true,
   },
   'Wicked Blow': {
     bp: 80,
@@ -3636,6 +3639,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     zp: 175,
     maxPower: 90,
+    isKick: true,
   },
   '10,000,000 Volt Thunderbolt': {maxPower: 1},
   Absorb: {maxPower: 90},
@@ -4214,6 +4218,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     secondaries: true,
     hasCrashDamage: true,
     makesContact: true,
+    isKick: true,
   },
   'Barb Barrage': {
     bp: 60,
@@ -4472,7 +4477,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Lunar Blessing': {
     bp: 0,
-    type: 'Psychic',
+    type: 'Cosmic',
     category: 'Status',
   },
   'Magical Torque': {
@@ -4746,6 +4751,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 175,
     maxPower: 90,
     secondaries: true,
+    isKick: true,
   },
   'Triple Dive': {
     bp: 30,
@@ -4796,6 +4802,266 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isWind: true,
     target: 'allAdjacentFoes',
   },
+  Abduct: {
+    bp: 60,
+    type: 'Cosmic',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Accretion Disk': {
+    bp: 90,
+    type: 'Dark',
+    category: 'Physical',
+  },
+  'Asteroid Belt': {
+    bp: 85,
+    type: 'Cosmic',
+    category: 'Physical',
+    isPunch: true,
+    makesContact: true,
+  },
+  'Asteroid Slam': {
+    bp: 70,
+    type: 'Cosmic',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Astral Rift': {
+    bp: 85,
+    type: 'Cosmic',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Bright Fang': {
+    bp: 85,
+    type: 'Light',
+    category: 'Physical',
+    isPunch: true,
+    makesContact: true,
+  },
+  'Butterfly Dust': {
+    bp: 25, 
+    type: 'Bug',
+    multihit: [2, 5],
+    category: 'Special',
+  },
+  'Celestial Alignment': {
+    bp: 0,
+    type: 'Cosmic',
+    category: 'Status',
+  },
+  'Comet Rush': {
+    bp: 80,
+    type: 'Cosmic',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Come in Peace': {
+    bp: 120,
+    type: 'Cosmic',
+    category: 'Special',
+  },
+  'Cosmic Impact': {
+    bp: 120,
+    type: 'Cosmic',
+    category: 'Physical',
+    recoil: [1, 3],
+    makesContact: true,
+  },
+  'Cosmic Web': {
+    bp: 55,
+    type: 'Cosmic',
+    category: 'Special',
+  },
+  'Dazzle Dart': {
+    bp: 50,
+    type: 'Light',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Eternal Light': {
+    bp: 120,
+    type: 'Light',
+    category: 'Special',
+  },
+  'Falling Star': {
+    bp: 150,
+    type: 'Cosmic',
+    category: 'Special',
+  },
+  'Feeding Frenzy': {
+    bp: 120,
+    type: 'Water',
+    category: 'Physical',
+    isBite: true,
+    makesContact: true,
+  },
+  'Flash Bang': {
+    bp: 80,
+    type: 'Light',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Flash Heal': {
+    bp: 0,
+    type: 'Light',
+    category: 'Status',
+  },
+  'Fountain of Life': {
+    bp: 90,
+    type: 'Water',
+    category: 'Special',
+    target: 'allAdjacent',
+  },
+  'Graviton Core': {
+    bp: 50,
+    type: 'Cosmic',
+    category: 'Physical',
+  },
+  'Holy Fire': {
+    bp: 70,
+    type: 'Light',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Light Edge': {
+    bp: 90,
+    type: 'Light',
+    category: 'Physical',
+    isSlicing: true,
+    makesContact: true,
+  },
+  'Light Geyser': {
+    bp: 80,
+    type: 'Light',
+    category: 'Special',
+  },
+  'Light Show': {
+    bp: 0,
+    type: 'Light',
+    category: 'Special',
+  },
+  Lightspeed: {
+    bp: 40,
+    type: 'Cosmic',
+    category: 'Physical',
+    priority: 2,
+    makesContact: true,
+  },
+  'Majestic Charge': {
+    bp: 90,
+    type: 'Steel',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Meteor Shower': {
+    bp: 60,
+    type: 'Cosmic',
+    category: 'Special',
+  },
+  'Planar Binding': {
+    bp: 35,
+    type: 'Cosmic',
+    category: 'Special',
+  },
+  'Primordial Bolt': {
+    bp: 120,
+    type: 'Rock',
+    category: 'Special',
+  },
+  'Prismatic Pyre': {
+    bp: 100,
+    type: 'Fire',
+    category: 'Special',
+  },
+  'Radiant Punishment': {
+    bp: 130,
+    type: 'Light',
+    category: 'Special',
+  },
+  'Shuttle Loop': {
+    bp: 70,
+    type: 'Flying',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Sleet Drop': {
+    bp: 80,
+    type: 'Ice',
+    category: 'Physical',
+    makesContact: true,
+  },
+  Supernova: {
+    bp: 250,
+    type: 'Cosmic',
+    category: 'Special',
+  },
+  'Radiant Shield': {
+    bp: 0,
+    type: 'Light',
+    category: 'Status',
+    priority: 4,
+  },
+  'Radiant Smite': {
+    bp: 60,
+    type: 'Light',
+    category: 'Physical',
+    isPunch: true,
+    makesContact: true,
+  },
+  'Rebound Shot': {
+    bp: 80,
+    type: 'Ghost',
+    category: 'Special',
+  },
+  'Shining Arrows': {
+    bp: 25,
+    type: 'Light',
+    category: 'Physical',
+    isBullet: true,
+    multihit: [2,5],
+  },
+  'Solar Flare': {
+    bp: 120,
+    type: 'Light',
+    category: 'Special',
+  },
+  'Solar Strike': {
+    bp: 80,
+    type: 'Light',
+    category: 'Special',
+  },
+  Sunburst: {
+    bp: 125,
+    type: 'Light',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Star Power': {
+    bp: 120,
+    type: 'Cosmic',
+    category: 'Special',
+    makesContact: true,
+  },
+  'Strobe Light' : {
+    bp: 15,
+    type: 'Light',
+    category: 'Special',
+    multihit: [2,5],
+    priority: 1,
+  },
+  'Vivid Burst': {
+    bp: 75,
+    type: 'Light',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Wormhole Warp': {
+    bp: 70,
+    type: 'Cosmic',
+    category: 'Physical',
+    makesContact: true,
+  }
 };
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
@@ -4868,6 +5134,7 @@ class Move implements I.Move {
     'maxPower',
     'isSlicing',
     'isWind',
+    'isKick',
   ]);
 
   constructor(name: string, data: MoveData, gen: number) {
@@ -4885,7 +5152,7 @@ class Move implements I.Move {
     if (data.isPulse) this.flags.pulse = 1;
     if (data.isSlicing) this.flags.slicing = 1;
     if (data.isWind) this.flags.wind = 1;
-
+    if (data.isKick) this.flags.kick = 1;
     assignWithout(this, data, Move.FLAGS);
 
     this.basePower = data.bp;

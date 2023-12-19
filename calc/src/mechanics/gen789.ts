@@ -94,7 +94,10 @@ export function calculateSMSSSV(
   };
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
-
+  if (attacker.hasAbility('Hamster Ball') && move.flags.bullet) {
+    move.category = 'Physical';
+    move.flags.contact = 1;
+  }
   if (move.category === 'Status' && !move.named('Nature Power')) {
     return result;
   }
@@ -361,8 +364,10 @@ export function calculateSMSSSV(
       (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
       (move.flags.wind && defender.hasAbility('Wind Rider')) ||
       (move.hasType('Cosmic') && defender.hasAbility('Chaotic Void')) || 
-      (move.hasType('Light') && defender.hasAbility('Radiant Order')) 
-  ) {
+      (move.hasType('Light') && defender.hasAbility('Radiant Order')) ||
+      (defender.hasAbility('Silver Lining') && typeEffectiveness >= 1)
+  ) 
+  {
     desc.defenderAbility = defender.ability;
     return result;
   }
@@ -800,6 +805,10 @@ export function calculateBasePowerSMSSSV(
     basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
     desc.moveBP = basePower;
     break;
+  case 'Falling Star':
+    basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
+    desc.moveBP = basePower;
+    break;
   case 'Flail':
   case 'Reversal':
     const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
@@ -1110,7 +1119,11 @@ export function calculateBPModsSMSSSV(
     bpMods.push(4915);
     desc.attackerAbility = attacker.ability;
   }
-
+  if (attacker.hasAbility('Ferocity') && move.flags.bite)
+  {
+    bpMods.push(5120);
+    move.priority = 1;
+  }
   if (attacker.hasItem('Punching Glove') && move.flags.punch) {
     bpMods.push(4506);
     desc.attackerItem = attacker.item;
@@ -1181,7 +1194,7 @@ export function calculateAttackSMSSSV(
 ) {
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
+  if (move.named('Photon Geyser', 'Light That Burns The Sky','Light Geyser') ||
       (move.named('Tera Blast') && attackSource.teraType)) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
@@ -1241,6 +1254,9 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Solar Power') &&
      field.hasWeather('Sun', 'Harsh Sunshine') &&
      move.category === 'Special') ||
+    (attacker.hasAbility('Weird Power') && 
+     field.hasTerrain('Psychic') &&
+     move.category === 'Special') ||
     (attacker.named('Cherrim') &&
      attacker.hasAbility('Flower Gift') &&
      field.hasWeather('Sun', 'Harsh Sunshine') &&
@@ -1272,7 +1288,8 @@ export function calculateAtModsSMSSSV(
       ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
        (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
        (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
-       (attacker.hasAbility('Swarm') && move.hasType('Bug')))) ||
+       (attacker.hasAbility('Swarm') && move.hasType('Bug')) ||
+       (attacker.hasAbility('Fusion') && move.hasType('Cosmic')))) ||
     (move.category === 'Special' && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus'))
   ) {
     atMods.push(6144);
@@ -1531,7 +1548,7 @@ function calculateBaseDamageSMSSSV(
   }
 
   if (
-    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
+    field.hasWeather('Sun') && (move.named('Hydro Steam') || move.named('Solar Strike')) && !attacker.hasItem('Utility Umbrella')
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
     desc.weather = field.weather;
@@ -1599,6 +1616,9 @@ export function calculateFinalModsSMSSSV(
   } else if (attacker.hasAbility('Tinted Lens') && typeEffectiveness < 1) {
     finalMods.push(8192);
     desc.attackerAbility = attacker.ability;
+  }
+  else if (attacker.hasAbility('Heavy Cannons') && isCritical) {
+    finalMods.push(5120)
   }
 
   if (defender.isDynamaxed && move.named('Dynamax Cannon', 'Behemoth Blade', 'Behemoth Bash')) {
