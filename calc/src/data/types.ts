@@ -406,7 +406,7 @@ const SM = XY;
 
 const SS = SM;
 
-const SV = extend(true, {}, GSC, {
+const SV = extend(true, {}, XY, {
   Normal: {Light: 1, Cosmic: 1},
   Grass: {Light: 2, Cosmic: 0.5},
   Fire: {Light: 1, Cosmic: 0.5},
