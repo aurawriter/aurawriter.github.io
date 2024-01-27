@@ -4193,6 +4193,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 120,
     isSlicing: true,
   },
+  
   'Aqua Step': {
     bp: 80,
     type: 'Water',
@@ -4689,6 +4690,12 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     secondaries: true,
     isWind: true,
     target: 'allAdjacentFoes',
+  },
+  Starburst: {
+    bp: 95,
+    type: 'Cosmic',
+    category: 'Special',
+    secondaries: true,
   },
   'Stone Axe': {
     bp: 65,
