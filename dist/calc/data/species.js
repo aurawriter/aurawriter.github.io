@@ -10404,6 +10404,42 @@ var SV_PATCH = {
         bs: { hp: 124, at: 80, df: 55, sa: 86, sd: 50, sp: 50 },
         weightkg: 32,
         abilities: { 0: 'Shield Dust' }
+    },
+    'Jolibird-Milk': {
+        types: ['Ice', 'Flying'],
+        bs: { hp: 75, at: 115, df: 60, sa: 115, sd: 65, sp: 90 },
+        weightkg: 16,
+        abilities: { 0: 'Vital Spirit' }
+    },
+    'Jolibird-Cookies': {
+        types: ['Ice', 'Fairy'],
+        bs: { hp: 90, at: 60, df: 115, sa: 65, sd: 115, sp: 75 },
+        weightkg: 16,
+        abilities: { 0: 'Vital Spirit' }
+    },
+    Giftrap: {
+        types: ['Poison', 'Psychic'],
+        bs: { hp: 60, at: 60, df: 60, sa: 60, sd: 60, sp: 60 },
+        weightkg: 0.3,
+        abilities: { 0: 'Infestive' }
+    },
+    'Giftrap-Sacred': {
+        types: ['Poison', 'Light'],
+        bs: { hp: 57, at: 83, df: 60, sa: 77, sd: 83, sp: 120 },
+        weightkg: 0.3,
+        abilities: { 0: 'Infestive' }
+    },
+    'Giftrap-Carol': {
+        types: ['Poison', 'Ice'],
+        bs: { hp: 80, at: 95, df: 58, sa: 100, sd: 62, sp: 85 },
+        weightkg: 0.3,
+        abilities: { 0: 'Infestive' }
+    },
+    'Giftrap-Mascot ': {
+        types: ['Poison', 'Ice'],
+        bs: { hp: 86, at: 75, df: 53, sa: 98, sd: 71, sp: 115 },
+        weightkg: 0.3,
+        abilities: { 0: 'Infestive' }
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH, PLA_PATCH);

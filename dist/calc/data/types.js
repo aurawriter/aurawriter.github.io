@@ -445,7 +445,7 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
 });
 var SM = XY;
 var SS = SM;
-var SV = (0, util_1.extend)(true, {}, GSC, {
+var SV = (0, util_1.extend)(true, {}, XY, {
     Normal: { Light: 1, Cosmic: 1 },
     Grass: { Light: 2, Cosmic: 0.5 },
     Fire: { Light: 1, Cosmic: 0.5 },

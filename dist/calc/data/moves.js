@@ -4678,6 +4678,12 @@ var SV_PATCH = {
         isWind: true,
         target: 'allAdjacentFoes'
     },
+    Starburst: {
+        bp: 95,
+        type: 'Cosmic',
+        category: 'Special',
+        secondaries: true
+    },
     'Stone Axe': {
         bp: 65,
         type: 'Rock',
