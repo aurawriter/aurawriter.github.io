@@ -371,6 +371,7 @@ const SV = SS.concat([
   'Tidal Force',
   'Tough Bark',
   'Weird Power',
+  'Infestive',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
