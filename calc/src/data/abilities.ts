@@ -348,9 +348,9 @@ const SV = SS.concat([
   'Duet',
   'Dusk Till Dawn',
   'Enlightenment',
-  'Escape Velocity', //Not done. How the hell do you do additive boosts.
+  'Escape Velocity', 
   'Ferociy',
-  'Fiery Fists', // Bugged? There's not code for multiple type moves here as far as i can tell
+  'Fiery Fists',
   'Fighting Spirit',
   'Fusion',
   'Guardian Angel',
@@ -372,6 +372,25 @@ const SV = SS.concat([
   'Tough Bark',
   'Weird Power',
   'Infestive',
+  'Allergy Season',
+  'Brushfire',
+  'Candy Crush',
+  'Caustic',
+  'Draconic Surge',
+  'Dragon Blessing',
+  'Film Noir',
+  'Haunted Terrain',
+  'Miasma',
+  'Overcharge',
+  'Mind over Matter',
+  'Pollen Beard',
+  'Pollution',
+  'Seance',
+  'Singularity',
+  'Sugar Hoard',
+  'Swift Strike',
+  'Vampiric',
+  'Weathering',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];

@@ -29,7 +29,7 @@ const EV_ITEMS = [
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
   return (field.isGravity || pokemon.hasItem('Iron Ball') ||
-    (!pokemon.hasType('Flying') &&
+    ((!pokemon.hasType('Flying') && !pokemon.hasAbility('Dragon Blessing')) &&
       !pokemon.hasAbility('Levitate') &&
       !pokemon.hasItem('Air Balloon')));
 }
@@ -105,8 +105,11 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
       (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
       (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow'].includes(weather)) ||
       (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric') ||
-      (pokemon.hasAbility('Arbor Flow') && terrain === 'Grassy') 
-  ) {
+      (pokemon.hasAbility('Arbor Flow') && terrain === 'Grassy') ||
+      (pokemon.hasAbility('Dragon Blessing') && terrain === 'Draconic') ||
+      (pokemon.hasAbility('Honey Gather') && weather === 'Pollen')
+  )
+   {
     speedMods.push(8192);
   } else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
     speedMods.push(6144);
@@ -475,6 +478,8 @@ export function getFinalDamage(
   if (protect) damageAmount = pokeRound(OF32(damageAmount * 1024) / 4096);
   return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 4096)));
 }
+
+
 
 /**
  * Determines which move category Shell Side Arm should behave as.

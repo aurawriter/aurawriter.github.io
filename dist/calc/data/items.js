@@ -552,6 +552,10 @@ var SV = SS.concat([
     'Radiant Plate',
     'Safari Helmet',
     'Telescope',
+    'Meli Berry',
+    'Smoggy Rock',
+    'Flowery Rock',
+    'Frost Orb'
 ]);
 var BERRIES = {
     'Aguav Berry': { t: 'Dragon', p: 80 },

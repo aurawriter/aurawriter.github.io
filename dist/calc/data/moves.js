@@ -5055,6 +5055,55 @@ var SV_PATCH = {
         type: 'Cosmic',
         category: 'Physical',
         makesContact: true
+    },
+    'Allergic Reaction': {
+        bp: 50,
+        type: 'Bug',
+        category: 'Special'
+    },
+    'Dragon Devastation': {
+        bp: 60,
+        type: 'Dragon',
+        category: 'Special'
+    },
+    'Ghastly Grasp': { bp: 0, category: 'Special', type: 'Ghost' },
+    'Smoggy Slide': {
+        bp: 70,
+        type: 'Poison',
+        category: 'Physical',
+        makesContact: true,
+        maxPower: 120
+    },
+    'Vitality Drain': { bp: 90, type: 'Dark', category: 'Special', drain: [1, 2] },
+    'Bubblegum Pop': {
+        bp: 0,
+        type: 'Fairy',
+        category: 'Special'
+    },
+    'Eerie Wind': {
+        bp: 100,
+        type: 'Ghost',
+        category: 'Special'
+    },
+    'Jawbreaker': {
+        bp: 50,
+        type: 'Fighting',
+        makesContact: true,
+        category: 'Physical'
+    },
+    'Double Cross': {
+        bp: 50,
+        type: 'Dark',
+        makesContact: true,
+        multihit: 2
+    },
+    'Frostbite': {
+        type: 'Ice',
+        category: 'Status'
+    },
+    'Fan Out': {
+        type: 'Poison',
+        category: 'Status'
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);

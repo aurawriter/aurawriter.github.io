@@ -505,6 +505,10 @@ const SV = SS.concat([
   'Radiant Plate',
   'Safari Helmet',
   'Telescope',
+  'Meli Berry',
+  'Smoggy Rock',
+  'Flowery Rock',
+  'Frost Orb'
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {

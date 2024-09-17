@@ -50,7 +50,7 @@ var EV_ITEMS = [
 ];
 function isGrounded(pokemon, field) {
     return (field.isGravity || pokemon.hasItem('Iron Ball') ||
-        (!pokemon.hasType('Flying') &&
+        ((!pokemon.hasType('Flying') && !pokemon.hasAbility('Dragon Blessing')) &&
             !pokemon.hasAbility('Levitate') &&
             !pokemon.hasItem('Air Balloon')));
 }
@@ -141,7 +141,9 @@ function getFinalSpeed(gen, pokemon, field, side) {
         (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
         (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow'].includes(weather)) ||
         (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric') ||
-        (pokemon.hasAbility('Arbor Flow') && terrain === 'Grassy')) {
+        (pokemon.hasAbility('Arbor Flow') && terrain === 'Grassy') ||
+        (pokemon.hasAbility('Dragon Blessing') && terrain === 'Draconic') ||
+        (pokemon.hasAbility('Honey Gather') && weather === 'Pollen')) {
         speedMods.push(8192);
     }
     else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {

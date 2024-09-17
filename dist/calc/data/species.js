@@ -10440,6 +10440,108 @@ var SV_PATCH = {
         bs: { hp: 86, at: 75, df: 53, sa: 98, sd: 71, sp: 115 },
         weightkg: 0.3,
         abilities: { 0: 'Infestive' }
+    },
+    Revolture: {
+        types: ['Dark', 'Flying'],
+        bs: { hp: 135, at: 49, df: 49, sa: 98, sd: 85, sp: 49 },
+        weightkg: 75,
+        abilities: { 0: 'Miasma' }
+    },
+    Galacast: {
+        types: ['Flying'],
+        bs: { hp: 60, at: 80, df: 65, sa: 75, sd: 65, sp: 125 },
+        weightkg: 38,
+        abilities: { 0: 'Drought' }
+    },
+    Sneevil: {
+        types: ['Bug', 'Normal'],
+        bs: { hp: 75, at: 65, df: 90, sa: 80, sd: 110, sp: 50 },
+        weightkg: 16,
+        abilities: { 0: 'Pollen Beard' }
+    },
+    'Sneevil-Shaved': {
+        types: ['Bug', 'Normal'],
+        bs: { hp: 75, at: 65, df: 50, sa: 80, sd: 70, sp: 130 },
+        weightkg: 16,
+        abilities: { 0: 'Pollen Beard' }
+    },
+    Santai: {
+        types: ['Bug', 'Fighting'],
+        bs: { hp: 67, at: 110, df: 60, sa: 81, sd: 58, sp: 109 },
+        weightkg: 17.5,
+        abilities: { 0: 'Swift Strike' }
+    },
+    Scabbardaunt: {
+        types: ['Dragon'],
+        bs: { hp: 80, at: 100, df: 60, sa: 85, sd: 80, sp: 80 },
+        weightkg: 139,
+        abilities: { 0: 'Weathering' }
+    },
+    'Spiritomb Aurora': {
+        types: ['Ghost', 'Cosmic'],
+        bs: { hp: 71, at: 82, df: 108, sa: 82, sd: 108, sp: 34 },
+        weightkg: 108,
+        abilities: { 0: 'Singularity' }
+    },
+    Volkaison: {
+        types: ['Electric', 'Fighting'],
+        bs: { hp: 82, at: 107, df: 79, sa: 37, sd: 69, sp: 116 },
+        weightkg: 94.6,
+        abilities: { 0: 'Overcharge' }
+    },
+    Grizzweet: {
+        types: ['Normal'],
+        bs: { hp: 110, at: 90, df: 80, sa: 70, sd: 90, sp: 50 },
+        weightkg: 125.8,
+        abilities: { 0: 'Honey Gather' }
+    },
+    Hypnoxious: {
+        types: ['Poison', 'Psychic'],
+        bs: { hp: 100, at: 93, df: 70, sa: 112, sd: 70, sp: 55 },
+        weightkg: 113,
+        abilities: { 0: 'Mind over Matter' }
+    },
+    Mothiosa: {
+        types: ['Bug', 'Dark'],
+        bs: { hp: 85, at: 115, df: 74, sa: 85, sd: 59, sp: 94 },
+        weightkg: 12.5,
+        abilities: { 0: 'Film Noir' }
+    },
+    Faengpire: {
+        types: ['Dark', 'Fairy'],
+        bs: { hp: 65, at: 112, df: 82, sa: 102, sd: 82, sp: 82 },
+        weightkg: 75,
+        abilities: { 0: 'Vampiric' }
+    },
+    Ponchobake: {
+        types: ['Poison', 'Ghost'],
+        bs: { hp: 85, at: 64, df: 87, sa: 110, sd: 125, sp: 64 },
+        weightkg: 27.2,
+        abilities: { 0: 'Caustic' }
+    },
+    Glucoana: {
+        types: ['Dragon', 'Fairy'],
+        bs: { hp: 185, at: 115, df: 55, sa: 70, sd: 55, sp: 60 },
+        weightkg: 150.5,
+        abilities: { 0: 'Sugar Hoard' }
+    },
+    Onisen: {
+        types: ['Ice', 'Fire'],
+        bs: { hp: 90, at: 130, df: 75, sa: 75, sd: 105, sp: 65 },
+        weightkg: 120,
+        abilities: { 0: 'Alpine Training' }
+    },
+    Dratosphere: {
+        types: ['Dragon', 'Flying'],
+        bs: { hp: 91, at: 100, df: 100, sa: 134, sd: 95, sp: 80 },
+        weightkg: 210,
+        abilities: { 0: 'Dragon Blessing' }
+    },
+    Spitrus: {
+        types: ['Grass'],
+        bs: { hp: 55, at: 65, df: 70, sa: 110, sd: 95, sp: 95 },
+        weightkg: 32,
+        abilities: { 0: 'Dragon Blessing' }
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH, PLA_PATCH);

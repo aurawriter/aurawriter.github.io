@@ -153,6 +153,8 @@ export function calculateSMSSSV(
       : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
       : field.hasWeather('Sand') ? 'Rock'
       : field.hasWeather('Hail', 'Snow') ? 'Ice'
+      : field.hasWeather('Acid Rain') ? 'Poison'
+      : field.hasWeather('Pollen') ? 'Bug'
       : 'Normal';
     desc.weather = field.weather;
     desc.moveType = type;
@@ -176,6 +178,8 @@ export function calculateSMSSSV(
       : field.hasTerrain('Grassy') ? 'Grass'
       : field.hasTerrain('Misty') ? 'Fairy'
       : field.hasTerrain('Psychic') ? 'Psychic'
+      : field.hasTerrain('Haunted') ? 'Ghost'
+      : field.hasTerrain('Draconic') ? 'Dragon'
       : 'Normal';
     desc.terrain = field.terrain;
     desc.moveType = type;
@@ -218,6 +222,8 @@ export function calculateSMSSSV(
   let isLiquidVoice = false;
   let isNormalize = false;
   let isDragonheart = false;
+  let isFieryFists = false;
+  let isMindOverMatter = false;
   const noTypeChange = move.named(
     'Revelation Dance',
     'Judgment',
@@ -232,6 +238,8 @@ export function calculateSMSSSV(
 
   if (!move.isZ && !noTypeChange) {
     const normal = move.hasType('Normal');
+    const fighting = move.hasType('Fighting');
+    const weird = field.hasTerrain('Psychic');
     if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
       type = 'Flying';
     } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
@@ -251,6 +259,14 @@ export function calculateSMSSSV(
     }
     else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
       type = 'Normal';
+    }
+    else if((isFieryFists = attacker.hasAbility('Fiery Fists') && fighting))
+    {
+      type = 'Fire';
+    }
+    else if((isMindOverMatter = attacker.hasAbility('Mind over Matter') && normal && weird))
+    {
+      type = 'Psychic';
     }
     if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize) {
       desc.attackerAbility = attacker.ability;
@@ -527,10 +543,10 @@ export function calculateSMSSSV(
   }
 
   const applyBurn =
-    attacker.hasStatus('brn') &&
+    (attacker.hasStatus('brn') &&
     move.category === 'Physical' &&
     !attacker.hasAbility('Guts') &&
-    !move.named('Facade');
+    !move.named('Facade')) || (attacker.hasStatus('fbt') && move.category === 'Special');
   desc.isBurned = applyBurn;
   const finalMods = calculateFinalModsSMSSSV(
     gen,
@@ -705,6 +721,10 @@ export function calculateBasePowerSMSSSV(
     basePower = move.bp * (turnOrder !== 'last' ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Allergic Reaction':
+    basePower = move.bp * (field.hasWeather('Pollen') ? 2: 1);
+    desc.moveBP = basePower;
+    break;
   case 'Pursuit':
     const switching = field.defenderSide.isSwitching === 'out';
     basePower = move.bp * (switching ? 2 : 1);
@@ -845,6 +865,14 @@ export function calculateBasePowerSMSSSV(
       basePower = 90;
       desc.moveName = 'Psychic';
       break;
+    case 'Draconic': 
+      basePower = 85;
+      desc.moveName = 'Dragon Pulse';
+      break;
+    case 'Haunted':
+      basePower = 80;
+      desc.moveName = 'Shadow Ball';
+      break;
     default:
       basePower = 80;
       desc.moveName = 'Tri Attack';
@@ -969,8 +997,8 @@ export function calculateBPModsSMSSSV(
   ) {
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
-  } else if (move.named('Solar Beam', 'Solar Blade') &&
-      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail', 'Snow')) {
+  } else if (move.named('Solar Beam', 'Solar Blade', 'Solar Flare') &&
+      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail', 'Snow','Pollen','Acid Rain')) {
     bpMods.push(2048);
     desc.moveBP = basePower / 2;
     desc.weather = field.weather;
@@ -1029,6 +1057,13 @@ export function calculateBPModsSMSSSV(
     }
   }
 
+  if (isGrounded(attacker,field)&&isGrounded(defender,field)){
+    if(field.hasTerrain('Draconic') && move.hasType('Dragon'))
+    {
+      bpMods.push((1+((defender.curHP()/defender.maxHP())/2)))
+    }
+  }
+
   // Abilities
 
   // Use BasePower after moves with custom BP to determine if Technician should boost
@@ -1078,6 +1113,8 @@ export function calculateBPModsSMSSSV(
       field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
     (attacker.hasAbility('Analytic') &&
       (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
+    (attacker.hasAbility('Escape Velocity') &&
+      (turnOrder == 'first' || field.defenderSide.isSwitching === 'out')) ||
     (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
     (attacker.hasAbility('Punk Rock') && move.flags.sound)
   ) {
@@ -1146,6 +1183,11 @@ export function calculateBPModsSMSSSV(
 
   // Items
 
+  if((attacker.named('Citrillon') || attacker.named('Spitrus')) && attacker.hasItem('Meli Berry') && move.type === 'Grass')
+  {
+    bpMods.push(5325);
+    desc.attackerItem = attacker.item;
+  }
   if (attacker.hasItem(`${move.type} Gem`)) {
     bpMods.push(5325);
     desc.attackerItem = attacker.item;
@@ -1260,7 +1302,10 @@ export function calculateAtModsSMSSSV(
     (attacker.named('Cherrim') &&
      attacker.hasAbility('Flower Gift') &&
      field.hasWeather('Sun', 'Harsh Sunshine') &&
-     move.category === 'Physical')) {
+     move.category === 'Physical') ||
+    attacker.hasAbility('Overcharge') &&
+    field.hasTerrain('Electric') &&
+      move.category == 'Physical') {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
@@ -1313,7 +1358,8 @@ export function calculateAtModsSMSSSV(
     desc.attackerAbility = attacker.ability;
   } else if (
     (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
-    (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
+    (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical') ||
+    (attacker.hasAbility('Candy Crush') && move.category === 'Physical' && field.hasTerrain('Misty')) 
   ) {
     atMods.push(8192);
     desc.attackerAbility = attacker.ability;
@@ -1566,7 +1612,7 @@ function calculateBaseDamageSMSSSV(
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
       desc.weather = field.weather;
-    }
+    } 
   }
 
   if (isCritical) {
@@ -1608,6 +1654,15 @@ export function calculateFinalModsSMSSSV(
     desc.isAuroraVeil = true;
   }
 
+  if(attacker.hasAbility('Vampiric') && (move.drain || (field.hasTerrain('Haunted') && move.hasType('Ghost'))))
+  {
+    finalMods.push(6144)
+  }
+  if(attacker.hasAbility('Swift Strike') && move.priority > 0.1) 
+  {
+    finalMods.push(4915);
+    desc.attackerAbility = attacker.ability;
+  }
   if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
     finalMods.push(5120);
     desc.attackerAbility = attacker.ability;
@@ -1618,6 +1673,17 @@ export function calculateFinalModsSMSSSV(
     finalMods.push(8192);
     desc.attackerAbility = attacker.ability;
   }
+  else if(field.hasWeather('Pollen') && typeEffectiveness < 1)
+    {
+      if(attacker.hasType('Bug'))
+      {
+        finalMods.push(8192);
+      }
+      else
+      {
+        finalMods.push(5324);
+      }
+    }
   else if (attacker.hasAbility('Heavy Cannons') && isCritical) {
     finalMods.push(5120)
   }
@@ -1664,7 +1730,11 @@ export function calculateFinalModsSMSSSV(
     finalMods.push(8192);
     desc.defenderAbility = defender.ability;
   }
-
+  if(attacker.hasAbility('Film Noir') && field.hasWeather('Rain'))
+  {
+    finalMods.push(4915);
+    desc.attackerAbility = attacker.ability;
+  }
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(4915);
     desc.attackerItem = attacker.item;

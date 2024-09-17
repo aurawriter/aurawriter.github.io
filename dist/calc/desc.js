@@ -371,6 +371,18 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             texts.push('sandstorm damage');
         }
     }
+    else if (field.hasWeather('Acid Rain')) {
+        if (!defender.hasType('Poison') &&
+            !defender.hasAbility('Magic Guard', 'Overcoat', 'Miasma')) {
+            if (defender.hasType('Steel')) {
+                damage -= Math.floor(defender.maxHP() / 8);
+            }
+            else {
+                damage -= Math.floor(defender.maxHP() / 16);
+            }
+        }
+        texts.push('acid rain damage');
+    }
     else if (field.hasWeather('Hail', 'Snow')) {
         if (defender.hasAbility('Ice Body')) {
             damage += Math.floor(defender.maxHP() / 16);
@@ -422,8 +434,18 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             texts.push('Leech Seed recovery');
         }
     }
+    if (field.hasWeather('Acid Rain')) {
+        if (defender.hasAbility('Miasma')) {
+            damage += Math.floor(defender.maxHP() / 8);
+            texts.push('Miasma Recovery');
+        }
+    }
     if (field.hasTerrain('Grassy')) {
         if ((0, util_2.isGrounded)(defender, field)) {
+            if (attacker.hasAbility('Brushfire') || defender.hasAbility('Brushfire') && !defender.hasType('Fire')) {
+                damage -= Math.floor(defender.maxHP() / 16);
+                texts.push('Brushfire damage');
+            }
             damage += Math.floor(defender.maxHP() / 16);
             texts.push('Grassy Terrain recovery');
         }
@@ -462,6 +484,12 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         !defender.hasAbility('Magic Guard')) {
         damage -= Math.floor(defender.maxHP() / 8);
         texts.push('Bad Dreams');
+    }
+    else if (defender.hasStatus('fbt')) {
+        if (!defender.hasAbility('MagicGuard')) {
+            damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
+            texts.push('frostbite damage');
+        }
     }
     if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) {
         if (attacker.hasItem('Binding Band')) {
