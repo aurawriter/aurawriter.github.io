@@ -541,7 +541,7 @@ export function calculateSMSSSV(
     stabMod += teraType && attacker.hasOriginalType(teraType) ? 1024 : 2048;
     desc.attackerAbility = attacker.ability;
   }
-
+  
   const applyBurn =
     (attacker.hasStatus('brn') &&
     move.category === 'Physical' &&
