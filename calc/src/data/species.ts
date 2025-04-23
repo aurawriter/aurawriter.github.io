@@ -4241,20 +4241,20 @@ const BW_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 45, at: 30, df: 50, sa: 55, sd: 65, sp: 45},
     weightkg: 5.8,
     nfe: true,
-    abilities: {0: 'Frisk'},
+    abilities: {0: 'Not A Phase'},
   },
   Gothitelle: {
     types: ['Psychic'],
     bs: {hp: 70, at: 55, df: 95, sa: 95, sd: 110, sp: 65},
     weightkg: 44,
-    abilities: {0: 'Frisk'},
+    abilities: {0: 'Not A Phase'},
   },
   Gothorita: {
     types: ['Psychic'],
     bs: {hp: 60, at: 45, df: 70, sa: 75, sd: 85, sp: 55},
     weightkg: 18,
     nfe: true,
-    abilities: {0: 'Frisk'},
+    abilities: {0: 'Not A Phase'},
   },
   Gurdurr: {
     types: ['Fighting'],
@@ -5349,7 +5349,7 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Floette',
   },
   Florges: {
-    types: ['Fairy'],
+    types: ['Fairy','Grass'],
     bs: {hp: 78, at: 65, df: 68, sa: 112, sd: 154, sp: 75},
     weightkg: 10,
     abilities: {0: 'Flower Veil'},
