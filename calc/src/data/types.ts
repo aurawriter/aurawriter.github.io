@@ -407,6 +407,7 @@ const SM = XY;
 const SS = SM;
 
 const SV = extend(true, {}, XY, {
+  '???': {Light: 1, Cosmic: 1},
   Normal: {Light: 1, Cosmic: 1},
   Grass: {Light: 2, Cosmic: 0.5},
   Fire: {Light: 1, Cosmic: 0.5},
@@ -426,6 +427,7 @@ const SV = extend(true, {}, XY, {
   Steel: {Light: 1, Cosmic: 1},
   Fairy: {Light: 1, Cosmic: 1},
   Light: {
+    '???': 1,
     Normal: 1,
     Grass: 0.5,
     Fire: 1,
@@ -448,6 +450,7 @@ const SV = extend(true, {}, XY, {
     Cosmic: 2,
    },
   Cosmic: { 
+    '???':1,
     Normal: 1,
     Grass: 1,
     Fire: 2,
