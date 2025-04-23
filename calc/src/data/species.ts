@@ -10526,6 +10526,18 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 32,
     abilities: {0:'Dragon Blessing'},
   },
+  Sovocteign: {
+    types: ['???'],
+    bs: {hp: 140, at: 120, df:110, sa: 110, sd: 110, sp: 90},
+    weightkg: 660,
+    abilities: {0:'Great Equalizer'},
+  },
+  Aerora: {
+    types: ['???'],
+    bs: {hp: 100, at: 100, df:100, sa: 100, sd: 100, sp: 100},
+    weightkg: 5,
+    abilities: {0:'Trace'},
+  },
 };
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
