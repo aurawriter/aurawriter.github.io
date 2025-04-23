@@ -5125,8 +5125,24 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   {
     type: 'Poison',
     category: 'Status',
-  }
-
+  },
+  reckoning: {
+    bp: 0,
+    type: '???',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 100,
+  },
+  'Tasty Treats':
+  {
+    type: 'Fairy',
+    category: 'Status',
+  },
+  'Stellar Wish':
+  {
+    type: 'Cosmic',
+    category: 'Status',
+  },
 };
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
