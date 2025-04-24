@@ -33,6 +33,7 @@ var Field = (function () {
         this.isSwordOfRuin = field.isSwordOfRuin || false;
         this.isTabletsOfRuin = field.isTabletsOfRuin || false;
         this.isVesselOfRuin = field.isVesselOfRuin || false;
+        this.isGreatEqualizer = field.isGreatEqualizer || false;
         this.attackerSide = new Side(field.attackerSide || {});
         this.defenderSide = new Side(field.defenderSide || {});
     }
@@ -62,6 +63,7 @@ var Field = (function () {
             terrain: this.terrain,
             isMagicRoom: this.isMagicRoom,
             isWonderRoom: this.isWonderRoom,
+            isGreatEqualizer: this.isGreatEqualizer,
             isGravity: this.isGravity,
             attackerSide: this.attackerSide,
             defenderSide: this.defenderSide,

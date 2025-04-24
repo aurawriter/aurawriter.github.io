@@ -4275,20 +4275,20 @@ var BW_PATCH = {
         bs: { hp: 45, at: 30, df: 50, sa: 55, sd: 65, sp: 45 },
         weightkg: 5.8,
         nfe: true,
-        abilities: { 0: 'Frisk' }
+        abilities: { 0: 'Not A Phase' }
     },
     Gothitelle: {
         types: ['Psychic'],
         bs: { hp: 70, at: 55, df: 95, sa: 95, sd: 110, sp: 65 },
         weightkg: 44,
-        abilities: { 0: 'Frisk' }
+        abilities: { 0: 'Not A Phase' }
     },
     Gothorita: {
         types: ['Psychic'],
         bs: { hp: 60, at: 45, df: 70, sa: 75, sd: 85, sp: 55 },
         weightkg: 18,
         nfe: true,
-        abilities: { 0: 'Frisk' }
+        abilities: { 0: 'Not A Phase' }
     },
     Gurdurr: {
         types: ['Fighting'],
@@ -5379,7 +5379,7 @@ var XY_PATCH = {
         baseSpecies: 'Floette'
     },
     Florges: {
-        types: ['Fairy'],
+        types: ['Fairy', 'Grass'],
         bs: { hp: 78, at: 65, df: 68, sa: 112, sd: 154, sp: 75 },
         weightkg: 10,
         abilities: { 0: 'Flower Veil' }
@@ -10542,6 +10542,18 @@ var SV_PATCH = {
         bs: { hp: 55, at: 65, df: 70, sa: 110, sd: 95, sp: 95 },
         weightkg: 32,
         abilities: { 0: 'Dragon Blessing' }
+    },
+    Sovocteign: {
+        types: ['???'],
+        bs: { hp: 140, at: 120, df: 110, sa: 110, sd: 110, sp: 90 },
+        weightkg: 660,
+        abilities: { 0: 'Great Equalizer' }
+    },
+    Aerora: {
+        types: ['???'],
+        bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
+        weightkg: 5,
+        abilities: { 0: 'Trace' }
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH, PLA_PATCH);

@@ -446,6 +446,7 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
 var SM = XY;
 var SS = SM;
 var SV = (0, util_1.extend)(true, {}, XY, {
+    '???': { Light: 1, Cosmic: 1 },
     Normal: { Light: 1, Cosmic: 1 },
     Grass: { Light: 2, Cosmic: 0.5 },
     Fire: { Light: 1, Cosmic: 0.5 },
@@ -465,6 +466,7 @@ var SV = (0, util_1.extend)(true, {}, XY, {
     Steel: { Light: 1, Cosmic: 1 },
     Fairy: { Light: 1, Cosmic: 1 },
     Light: {
+        '???': 1,
         Normal: 1,
         Grass: 0.5,
         Fire: 1,
@@ -487,6 +489,7 @@ var SV = (0, util_1.extend)(true, {}, XY, {
         Cosmic: 2
     },
     Cosmic: {
+        '???': 1,
         Normal: 1,
         Grass: 1,
         Fire: 2,

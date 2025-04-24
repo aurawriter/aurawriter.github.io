@@ -5104,6 +5104,21 @@ var SV_PATCH = {
     'Fan Out': {
         type: 'Poison',
         category: 'Status'
+    },
+    reckoning: {
+        bp: 0,
+        type: '???',
+        category: 'Physical',
+        zp: 100,
+        maxPower: 100
+    },
+    'Tasty Treats': {
+        type: 'Fairy',
+        category: 'Status'
+    },
+    'Stellar Wish': {
+        type: 'Cosmic',
+        category: 'Status'
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);

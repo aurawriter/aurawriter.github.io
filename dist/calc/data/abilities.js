@@ -423,6 +423,11 @@ var SV = SS.concat([
     'Swift Strike',
     'Vampiric',
     'Weathering',
+    'Not A Phase',
+    'Soul Shepherd',
+    'Great Equalizer',
+    'High Noon',
+    'Treat Filled',
 ]);
 exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Abilities = (function () {
