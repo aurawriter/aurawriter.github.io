@@ -94,7 +94,6 @@ function createCalcField(battle: Battle, field: Field, sides: [Side, Side]) {
     terrain: field.terrain,
     isMagicRoom: field.hasPseudoWeather('magicroom' as ID),
     isWonderRoom: field.hasPseudoWeather('wonderroom' as ID),
-   
     isGravity: field.hasPseudoWeather('gravity' as ID),
     isAuraBreak: battle.abilityActive(['aurabreak'] as ID[]),
     isFairyAura: battle.abilityActive(['fairyaura'] as ID[]),
