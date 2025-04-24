@@ -14,7 +14,7 @@ export type SpeciesName = string & As<'SpeciesName'>;
 export type StatusName = 'slp' | 'psn' | 'brn' | 'fbt' | 'par' | 'tox' ;
 
 export type GameType = 'Singles' | 'Doubles';
-export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty' | 'Draconic' | 'Haunted' ;
+export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty' | 'Draconic' | 'Haunted' | 'Great Equalizer';
 export type Weather =
   | 'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Snow' | 'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds' | 'Gravity' | 'Pollen' | 'Acid Rain' ;
 
