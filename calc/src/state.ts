@@ -42,6 +42,7 @@ export namespace State {
     terrain?: I.Terrain;
     isMagicRoom?: boolean;
     isWonderRoom?: boolean;
+    isGreatEqualizer?: boolean;
     isGravity?: boolean;
     isAuraBreak?: boolean;
     isFairyAura?: boolean;
