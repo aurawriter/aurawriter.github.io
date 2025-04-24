@@ -7,6 +7,7 @@ export class Field implements State.Field {
   terrain?: Terrain;
   isMagicRoom: boolean;
   isWonderRoom: boolean;
+  isGreatEqualizer: boolean;
   isGravity: boolean;
   isAuraBreak?: boolean;
   isFairyAura?: boolean;
@@ -24,6 +25,7 @@ export class Field implements State.Field {
     this.weather = field.weather;
     this.isMagicRoom = !!field.isMagicRoom;
     this.isWonderRoom = !!field.isWonderRoom;
+    this.isGreatEqualizer = !!field.isGreatEqualizer;
     this.isGravity = !!field.isGravity;
     this.isAuraBreak = field.isAuraBreak || false;
     this.isFairyAura = field.isFairyAura || false;
@@ -57,6 +59,7 @@ export class Field implements State.Field {
       terrain: this.terrain,
       isMagicRoom: this.isMagicRoom,
       isWonderRoom: this.isWonderRoom,
+      isGreatEqualizer: this.isGreatEqualizer,
       isGravity: this.isGravity,
       attackerSide: this.attackerSide,
       defenderSide: this.defenderSide,
