@@ -25,7 +25,6 @@ export class Field implements State.Field {
     this.weather = field.weather;
     this.isMagicRoom = !!field.isMagicRoom;
     this.isWonderRoom = !!field.isWonderRoom;
-    this.isGreatEqualizer = !!field.isGreatEqualizer;
     this.isGravity = !!field.isGravity;
     this.isAuraBreak = field.isAuraBreak || false;
     this.isFairyAura = field.isFairyAura || false;
@@ -34,6 +33,7 @@ export class Field implements State.Field {
     this.isSwordOfRuin = field.isSwordOfRuin || false;
     this.isTabletsOfRuin = field.isTabletsOfRuin || false;
     this.isVesselOfRuin = field.isVesselOfRuin || false;
+    this.isGreatEqualizer = field.isGreatEqualizer || false;
 
     this.attackerSide = new Side(field.attackerSide || {});
     this.defenderSide = new Side(field.defenderSide || {});
