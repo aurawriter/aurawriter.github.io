@@ -15,7 +15,6 @@ export class Field implements State.Field {
   isSwordOfRuin?: boolean;
   isTabletsOfRuin?: boolean;
   isVesselOfRuin?: boolean;
-  isGreatEqualizer?: boolean;
   attackerSide: Side;
   defenderSide: Side;
 
@@ -33,7 +32,6 @@ export class Field implements State.Field {
     this.isSwordOfRuin = field.isSwordOfRuin || false;
     this.isTabletsOfRuin = field.isTabletsOfRuin || false;
     this.isVesselOfRuin = field.isVesselOfRuin || false;
-    this.isGreatEqualizer = field.isGreatEqualizer || false;
 
     this.attackerSide = new Side(field.attackerSide || {});
     this.defenderSide = new Side(field.defenderSide || {});
@@ -69,7 +67,6 @@ export class Field implements State.Field {
       isSwordOfRuin: this.isSwordOfRuin,
       isTabletsOfRuin: this.isTabletsOfRuin,
       isVesselOfRuin: this.isVesselOfRuin,
-      isGreatEqualizer: this.isGreatEqualizer,
     });
   }
 }
