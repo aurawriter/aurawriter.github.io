@@ -1534,8 +1534,8 @@ export function calculateDfModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
   // Pokemon with "-of " Ability are immune to the opposing "-of " ability
-  const isSwordOfRuinActive = (attacker.hasAbility('Sword of ') || field.isSwordOf) &&
-    !defender.hasAbility('Sword of ');
+  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
+    !defender.hasAbility('Sword of Ruin ');
   const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin) &&
     !defender.hasAbility('Beads of Ruin');
   if (
