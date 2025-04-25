@@ -542,7 +542,7 @@ export function calculateSMSSSV(
     desc.attackerAbility = attacker.ability;
   }
   if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
-    stabMod = 0; 
+    stabMod = 4096; 
   }
   const applyBurn =
     (attacker.hasStatus('brn') &&
@@ -1668,7 +1668,7 @@ export function calculateFinalModsSMSSSV(
     desc.attackerAbility = attacker.ability;
   }
   if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
-    typeEffectiveness = 0; 
+    typeEffectiveness = 1; 
     finalMods.push(6144);
   }
   if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
