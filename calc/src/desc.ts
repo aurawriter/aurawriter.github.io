@@ -27,6 +27,7 @@ export interface RawDesc {
   isSwordOfRuin?: boolean;
   isTabletsOfRuin?: boolean;
   isVesselOfRuin?: boolean;
+  isGreatEqualizer?: boolean;
   isAuroraVeil?: boolean;
   isFlowerGiftAttacker?: boolean;
   isFlowerGiftDefender?: boolean;
@@ -892,6 +893,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   if (description.isBeadsOfRuin) {
     output += 'Beads of Ruin ';
+  }
+  if (description.isGreatEqualizer) {
+    output += 'Great Equalizer ';
   }
   if (description.isSwordOfRuin) {
     output += 'Sword of Ruin ';
