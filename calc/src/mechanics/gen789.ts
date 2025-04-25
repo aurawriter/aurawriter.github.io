@@ -541,7 +541,9 @@ export function calculateSMSSSV(
     stabMod += teraType && attacker.hasOriginalType(teraType) ? 1024 : 2048;
     desc.attackerAbility = attacker.ability;
   }
-  
+  if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
+    stabMod = 0; 
+  }
   const applyBurn =
     (attacker.hasStatus('brn') &&
     move.category === 'Physical' &&
@@ -1131,6 +1133,7 @@ export function calculateBPModsSMSSSV(
     bpMods.push(5325);
     desc.isPowerSpot = true;
   }
+  
 
   if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
     if (attacker.gender === defender.gender) {
@@ -1530,9 +1533,9 @@ export function calculateDfModsSMSSSV(
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
   }
-  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
-  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
-    !defender.hasAbility('Sword of Ruin');
+  // Pokemon with "-of " Ability are immune to the opposing "-of " ability
+  const isSwordOfActive = (attacker.hasAbility('Sword of ') || field.isSwordOf) &&
+    !defender.hasAbility('Sword of ');
   const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin) &&
     !defender.hasAbility('Beads of Ruin');
   if (
@@ -1663,6 +1666,10 @@ export function calculateFinalModsSMSSSV(
   {
     finalMods.push(4915);
     desc.attackerAbility = attacker.ability;
+  }
+  if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
+    typeEffectiveness = 0; 
+    finalMods.push(6144);
   }
   if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
     finalMods.push(5120);
