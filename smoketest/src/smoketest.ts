@@ -99,7 +99,7 @@ function createCalcField(battle: Battle, field: Field, sides: [Side, Side]) {
     isFairyAura: battle.abilityActive(['fairyaura'] as ID[]),
     isDarkAura: battle.abilityActive(['darkaura'] as ID[]),
     isBeadsOfRuin: battle.abilityActive(['beadsofruin'] as ID[]),
-    isGreatEqualizer: battle.abilityActive(['greatequalizer'] as ID),
+    isGreatEqualizer: battle.abilityActive(['greatequalizer'] as ID[]),
     isSwordOfRuin: battle.abilityActive(['swordofruin'] as ID[]),
     isTabletsOfRuin: battle.abilityActive(['tabletsofruin'] as ID[]),
     isVesselOfRuin: battle.abilityActive(['vesselofruin'] as ID[]),
