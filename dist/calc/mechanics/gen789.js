@@ -232,6 +232,9 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
         typeEffectiveness = 1;
     }
+    if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
+        typeEffectiveness = 1;
+    }
     if (typeEffectiveness === 0) {
         return result;
     }
@@ -1262,7 +1265,6 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         desc.attackerAbility = attacker.ability;
     }
     if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
-        typeEffectiveness = 1;
         finalMods.push(6144);
     }
     if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
