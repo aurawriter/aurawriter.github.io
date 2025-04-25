@@ -23,6 +23,7 @@ export interface RawDesc {
     isSwordOfRuin?: boolean;
     isTabletsOfRuin?: boolean;
     isVesselOfRuin?: boolean;
+    isGreatEqualizer?: boolean;
     isAuroraVeil?: boolean;
     isFlowerGiftAttacker?: boolean;
     isFlowerGiftDefender?: boolean;

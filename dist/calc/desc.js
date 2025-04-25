@@ -726,6 +726,9 @@ function buildDescription(description, attacker, defender) {
     if (description.isBeadsOfRuin) {
         output += 'Beads of Ruin ';
     }
+    if (description.isGreatEqualizer) {
+        output += 'Great Equalizer ';
+    }
     if (description.isSwordOfRuin) {
         output += 'Sword of Ruin ';
     }
