@@ -382,6 +382,9 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         stabMod += teraType && attacker.hasOriginalType(teraType) ? 1024 : 2048;
         desc.attackerAbility = attacker.ability;
     }
+    if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
+        stabMod = 0;
+    }
     var applyBurn = (attacker.hasStatus('brn') &&
         move.category === 'Physical' &&
         !attacker.hasAbility('Guts') &&
@@ -1166,7 +1169,7 @@ function calculateDfModsSMSSSV(gen, attacker, defender, move, field, desc, isCri
         desc.defenderAbility = defender.ability;
     }
     var isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
-        !defender.hasAbility('Sword of Ruin');
+        !defender.hasAbility('Sword of Ruin ');
     var isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin) &&
         !defender.hasAbility('Beads of Ruin');
     if ((isSwordOfRuinActive && hitsPhysical) ||
@@ -1257,6 +1260,10 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
     if (attacker.hasAbility('Swift Strike') && move.priority > 0.1) {
         finalMods.push(4915);
         desc.attackerAbility = attacker.ability;
+    }
+    if (attacker.hasAbility('Great Equalizer') || defender.hasAbility('Great Equalizer') || field.isGreatEqualizer) {
+        typeEffectiveness = 0;
+        finalMods.push(6144);
     }
     if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
         finalMods.push(5120);
