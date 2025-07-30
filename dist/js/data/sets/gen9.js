@@ -4820,5 +4820,23 @@ var SETDEX_SV = {
   },
   "Glalie": {
     "ZU Showdown Usage": {"ability":"Inner Focus","item":"Focus Sash","nature":"Jolly","teraType":"Ice","evs":{"at":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Earthquake","Ice Shard"]}
-  }
+  },
+"Abysmatoth": {
+	"Offensive": {"item": "Life Orb", "ability": "Chaotic Void", "nature": "Jolly", "evs": {"hp": 0, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Accretion Disk", "Knock Off", "Wormhole Warp", "Swords Dance"]}, "The REAL Set": {"item": "Metronome", "ability": "Chaotic Void", "nature": "Jolly", "evs": {"hp": 0, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Accretion Disk", "Comet Rush", "Wormhole Warp", "Metronome"]}
+  }, 
+
+"Aerora": {"Standard": {"item": "Heavy-Duty Boots", "ability": "Trace", "nature": "Timid", "evs": {"hp": 0, "at": 0, "df": 0, "sa": 252, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 0, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Stellar Wish", "Ice Beam", "Calm Mind", "Substitute"]}}, 
+
+"Anglare": {"Scarf": {"item": "Choice Scarf", "ability": "Merciless", "nature": "Jolly", "evs": {"hp": 0, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Gunk Shot", "Light Edge", "Ice Spinner", "Fire Fang"]}, "Setup": {"item": "Loaded Dice", "ability": "Merciless", "nature": "Jolly", "evs": {"hp": 0, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Swords Dance", "Shining Arrows", "Ice Spinner", "Gunk Shot"]}}, 
+
+"Arachnorok": {"Curse Setup": {"item": "Leftovers", "ability": "Anger Point", "nature": "Adamant", "evs": {"hp": 252, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 0}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Curse", "Earthquake", "Outrage", "Leech Life"]}, "Setup": {"item": "Choice Band", "ability": "Anger Point", "nature": "Adamant", "evs": {"hp": 0, "at": 252, "df": 0, "sa": 0, "sd": 4, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["First Impression", "Earthquake", "Outrage", "Superpower"]}}, 
+
+"Arjibee": {"Tail Glow": {"item": "Loaded Dice", "ability": "Protean", "nature": "Modest", "evs": {"hp": 252, "at": 0, "df": 0, "sa": 252, "sd": 0, "sp": 4}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Tail Glow", "Strobe Light", "Parabolic Charge", "Lumina Crash"]}, "Pivot": {"item": "Heavy Duty Boots", "ability": "Protean", "nature": "Jolly", "evs": {"hp": 0, "at": 252, "df": 0, "sa": 0, "sd": 0, "sp": 252}, "ivs": {"hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["U-Turn", "Zing Zap", "Drill Run", "Leech Life"]}
+			  }, 
+
+"Astreon": {"Physically Defensive": {"item": "Heavy Duty Boots", "ability": "Cloud Nine", "nature": "Timid", "evs": {"hp": 252, "at": 4, "df": 252, "sa": 0, "sd": 0, "sp": 0}, "ivs": {"hp": 31, "at": 0, "df": 31, "sa": 31, "sd": 31, "sp": 31}, "level": 100, "moves": ["Toxic", "Wormhole Warp", "Moonlight", "Comet Rush"]}
+			  }
+
+
+	
 };
