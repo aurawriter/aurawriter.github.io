@@ -238,7 +238,7 @@ var SETDEX_SV = {
     "NU Curse": {"ability":"Poison Touch","item":"Leftovers","nature":"Careful","teraType":"Water","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Poison Jab","Drain Punch","Shadow Sneak"]},
     "PU Curse": {"ability":"Sticky Hold","item":"Leftovers","nature":"Careful","teraType":"Dark","evs":{"hp":248,"df":8,"sd":252},"moves":["Curse","Poison Jab","Knock Off","Drain Punch"]},
 	  "PU Utility": { "ability": "Sticky Hold", "item": "Leftovers", "nature": "Careful", "teraType": "Dark", "evs": { "hp": 248, "df": 8, "sd": 252 }, "moves": ["Knock Off", "Drain Punch", "Poison Jab", "Protect"] },
-	  "Pollution": { "item": "Smoggy Rock", "ability": "Pollution", "nature": "Careful", "evs": { "hp": 252, "at": 4, "df": 0, "sa": 0, "sd": 252, "sp": 0 }, "ivs": { "hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31 }, "level": 100, "moves": [{"Knock Off", "Smoggy Slide", "Haze", "Toxic"]}
+	  "Pollution": { "item": "Smoggy Rock", "ability": "Pollution", "nature": "Careful", "evs": { "hp": 252, "at": 4, "df": 0, "sa": 0, "sd": 252, "sp": 0 }, "ivs": { "hp": 31, "at": 31, "df": 31, "sa": 31, "sd": 31, "sp": 31 }, "level": 100, "moves": [ "Knock Off", "Smoggy Slide", "Haze", "Toxic"]}
   },
   "Muk-Alola": {
     "OU Specially Defensive": {"ability":"Poison Touch","item":"Leftovers","nature":"Careful","teraType":"Water","evs":{"hp":252,"at":4,"sd":252},"moves":["Knock Off","Poison Jab","Protect","Drain Punch"]},
