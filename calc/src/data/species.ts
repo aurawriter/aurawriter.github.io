@@ -10220,7 +10220,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 82.8,
     abilities: {0: 'Inner Focus'},
   },
-  Gaveliant: {
+  Valiadin: {
     types: ['Light'],
     bs: {hp: 60, at: 95, df: 115, sa: 95, sd: 115,sp: 60},
     weightkg: 112.8,
