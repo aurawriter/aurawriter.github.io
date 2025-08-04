@@ -1715,7 +1715,7 @@ export function calculateFinalModsSMSSSV(
     finalMods.push(2048);
     desc.defenderAbility = defender.ability;
   } else if(defender.name === 'Calikami-Radiant' && defender.hasAbility('Dusk Till Dawn')) { //potentially stupid work around for not understanding how to check if its the first turn out
-    finalMods.push(2048);
+    finalMods.push(3072);
     desc.defenderAbility = defender.ability;
   } else if (
     (defender.hasAbility('Punk Rock') && move.flags.sound) ||
