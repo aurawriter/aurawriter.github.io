@@ -1306,7 +1306,7 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         desc.defenderAbility = defender.ability;
     }
     else if (defender.name === 'Calikami-Radiant' && defender.hasAbility('Dusk Till Dawn')) {
-        finalMods.push(2048);
+        finalMods.push(3072);
         desc.defenderAbility = defender.ability;
     }
     else if ((defender.hasAbility('Punk Rock') && move.flags.sound) ||
