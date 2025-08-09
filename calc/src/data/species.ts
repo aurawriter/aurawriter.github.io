@@ -10533,7 +10533,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0:'Great Equalizer'},
   },
   Aerora: {
-    types: ['???'],
+    types: ['Light','Ice'],
     bs: {hp: 100, at: 100, df:100, sa: 100, sd: 100, sp: 100},
     weightkg: 5,
     abilities: {0:'Trace'},
@@ -10616,3 +10616,4 @@ for (const species of SPECIES) {
   SPECIES_BY_ID.push(map);
   gen++;
 }
+
