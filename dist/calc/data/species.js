@@ -10550,7 +10550,7 @@ var SV_PATCH = {
         abilities: { 0: 'Great Equalizer' }
     },
     Aerora: {
-        types: ['???'],
+        types: ['Light', 'Ice'],
         bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 },
         weightkg: 5,
         abilities: { 0: 'Trace' }

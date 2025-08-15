@@ -1279,16 +1279,16 @@ function calculateFinalModsSMSSSV(gen, attacker, defender, move, field, desc, is
         finalMods.push(8192);
         desc.attackerAbility = attacker.ability;
     }
-    else if (field.hasWeather('Pollen') && typeEffectiveness < 1) {
+    else if (attacker.hasAbility('Heavy Cannons') && isCritical) {
+        finalMods.push(5120);
+    }
+    if (field.hasWeather('Pollen') && typeEffectiveness < 1) {
         if (attacker.hasType('Bug')) {
             finalMods.push(8192);
         }
         else {
             finalMods.push(5324);
         }
-    }
-    else if (attacker.hasAbility('Heavy Cannons') && isCritical) {
-        finalMods.push(5120);
     }
     if (defender.isDynamaxed && move.named('Dynamax Cannon', 'Behemoth Blade', 'Behemoth Bash')) {
         finalMods.push(8192);
