@@ -14,6 +14,7 @@ export interface SpeciesData {
     sl?: number;
   };
   readonly weightkg: number; // weight
+  readonly heightm: number; // height
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
   readonly otherFormes?: string[];
@@ -10524,7 +10525,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Grass'],
     bs: {hp: 55, at: 65, df:70, sa: 110, sd: 95, sp: 95},
     weightkg: 32,
-    abilities: {0:'Dragon Blessing'},
+    abilities: {0:'Chlorophyll'},
   },
   Sovocteign: {
     types: ['???'],
@@ -10537,6 +10538,48 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 100, df:100, sa: 100, sd: 100, sp: 100},
     weightkg: 5,
     abilities: {0:'Trace'},
+  },
+  Dalmaltian: {
+    types: ['Ice','Normal'],
+    bs: {hp: 65, at:101,df:50,sa:81,sd:92,sp:101},
+    weightkg: 28.8,
+    abilities: {0:'Ice Body'},
+  },
+  steerling: {
+    types: ['Steel','Ground'],
+    bs: {hp: 94, at: 69, df: 80, sa: 68, sd: 93, sp: 88},
+    weightkg: 176.8,
+    abilities: {0: 'Rough Skin'},
+  },
+  amethix: {
+    types: ['Psychic','Rock'],
+    bs: {hp:75,at:30,df: 55,sa: 65,sd: 200,sp:85},
+    weightkg: 300,
+    abilities: {0: 'Rock Head'},
+  },
+  dryllor: {
+    types: ['Bug','Psychic'],
+    bs: {hp:70, at: 75, df: 110, spa: 130, sd: 60, se: 55},
+    weightkg:38,
+    abilities: {0: "Swarm"},
+  },
+  repetapir: {
+    types: ['Water'],
+    bs: {hp: 65, at: 90, df: 120, sa: 75, sd: 80, se: 60},
+    weightkg: 300,
+    abilities: {0: 'Natural Cure'},
+  },
+  elecacha: {
+    types: ['Electric'],
+    bs: {hp:125,at:110,def:110,sa:60,sd: 140,se:25},
+    weightkg: 150,
+    abilities: {0: 'Klutz'},
+  },
+  fermentoss: {
+    types: ['Grass'],
+    bs: {hp: 80, at: 70,def: 110,sa:125,sd:90,se:40},
+    weightkg: 100,
+    abilities: {0: 'Fermentation'},
   },
 };
 
@@ -10569,6 +10612,7 @@ class Specie implements I.Specie {
   readonly types!: [I.TypeName] | [I.TypeName, I.TypeName];
   readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg!: number; // weight
+  readonly heightm!: number;
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
   readonly otherFormes?: I.SpeciesName[];
