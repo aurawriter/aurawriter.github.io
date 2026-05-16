@@ -86,6 +86,11 @@ export function computeFinalStats(
         pokemon.stats[stat] = getModifiedStat(pokemon.rawStats[stat]!, pokemon.boosts[stat]!, gen);
       }
     }
+    // Drowsy status halves Defense and Special Defense
+    if (pokemon.hasStatus('drw')) {
+      pokemon.stats.def = Math.floor(pokemon.stats.def / 2);
+      pokemon.stats.spd = Math.floor(pokemon.stats.spd / 2);
+    }
   }
 }
 
@@ -152,6 +157,13 @@ export function getMoveEffectiveness(
     return 2;
   } else if(move.named('Accretion Disk') && type === 'Light') {
     return 2;
+  } else if (move.named('Short Circuit') && type === 'Electric') {
+    return 2;
+  }
+  else if (move.named('Geokinesis')) {
+    return (
+      gen.types.get('rock' as ID)!.effectiveness[type]! * gen.types.get('psychic' as ID)!.effectiveness[type]!
+    );
   }
   else if (move.named('Flying Press')) {
     return (

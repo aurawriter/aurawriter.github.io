@@ -248,6 +248,8 @@ class Move implements I.Move {
     if (dex.gen >= 9) {
       if (move.flags.wind) this.flags.wind = move.flags.wind;
       if (move.flags.slicing) this.flags.slicing = move.flags.slicing;
+      if (move.flags.kick) this.flags.kick = move.flags.kick;
+      if (move.flags.spin) this.flags.spin = move.flags.spin;
     }
   }
 }

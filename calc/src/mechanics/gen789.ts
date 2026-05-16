@@ -212,6 +212,12 @@ export function calculateSMSSSV(
     } else if (attacker.name.includes('Ogerpon-Wellspring')) {
       type = 'Water';
     }
+  } else if (move.named('Essence Burst') && attacker.item.includes('Plate')) {
+    const essenceType = getItemBoostType(attacker.item);
+    if (essenceType) {
+      type = essenceType;
+      desc.attackerItem = attacker.item;
+    }
   }
 
   let hasAteAbilityTypeChange = false;
@@ -384,7 +390,8 @@ export function calculateSMSSSV(
       (move.flags.wind && defender.hasAbility('Wind Rider')) ||
       (move.hasType('Cosmic') && defender.hasAbility('Chaotic Void')) || 
       (move.hasType('Light') && defender.hasAbility('Radiant Order')) ||
-      (defender.hasAbility('Silver Lining') && typeEffectiveness >= 1)
+      (defender.hasAbility('Silver Lining') && typeEffectiveness >= 1) ||
+      (defender.hasAbility('Light Lunch') && move.hasType ('Light'))
   ) 
   {
     desc.defenderAbility = defender.ability;
@@ -482,7 +489,8 @@ export function calculateSMSSSV(
   const attack = calculateAttackSMSSSV(gen, attacker, defender, move, field, desc, isCritical);
   const attackSource = move.named('Foul Play') ? defender : attacker;
   if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
-      (move.named('Tera Blast') && attackSource.teraType)) {
+      (move.named('Tera Blast') && attackSource.teraType) ||
+      (move.named('Essence Burst') && attacker.item.includes('Plate')) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
@@ -698,6 +706,20 @@ export function calculateSMSSSV(
 
   result.damage = childDamage ? [damage, childDamage] : damage;
 
+  // Flurry of Blows follow-up
+  if (attacker.hasAbility('Flurry of Blows') && move.hasType('Fighting') && (move.timesUsed || 1) === 1 && !move.named('Arm Thrust')) {
+    const followUpMove = new Move(gen, 'Arm Thrust');
+    followUpMove.timesUsed = 2; // prevents re-trigger
+    const followUpResult = calculateSMSSSV(gen, attacker.clone(), defender.clone(), followUpMove, field);
+    const initialRange = result.range();
+    const followUpRange = followUpResult.range();
+    const combinedMin = initialRange[0] + followUpRange[0];
+    const combinedMax = initialRange[1] + followUpRange[1];
+    result.damage = [combinedMin, combinedMax];
+    result.rawDesc.attackerAbility = attacker.ability;
+    (result.rawDesc as any).followUpMove = 'Arm Thrust';
+  }
+
   // #endregion
 
   return result;
@@ -746,6 +768,18 @@ export function calculateBasePowerSMSSSV(
     basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
     if (attacker.stats.spe === 0) basePower = 1;
     desc.moveBP = basePower;
+    break;
+  case 'Telekinetic Toss': 
+    {
+      const ds = field.defenderSide;
+      let hazards = 0;
+      if (ds.isSR) hazards++;
+      if (ds.spikes && ds.spikes > 0) hazards++;
+      if ((ds as any).toxicSpikes && (ds as any).toxicSpikes > 0) hazards++;
+      if ((ds as any).isStickyWeb) hazards++;
+      if ((ds as any).isTastyTreats) hazards++;
+      basePower = move.bp + 25 * hazards;
+    }
     break;
   case 'Punishment':
     basePower = Math.min(200, 60 + 20 * countBoosts(gen, defender.boosts));
@@ -894,6 +928,10 @@ export function calculateBasePowerSMSSSV(
     break;
   // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
   case 'Triple Axel':
+    basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
+    desc.moveBP = basePower;
+    break;
+  case 'Hat Trick':
     basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -1085,7 +1123,10 @@ export function calculateBPModsSMSSSV(
     (attacker.hasAbility('Mega Launcher') && (move.flags.pulse || move.flags.bullet)) ||
     (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
     (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
-    (attacker.hasAbility('Sharpness') && move.flags.slicing)
+    (attacker.hasAbility('Focusing Crystals') && move.hasType('Psychic')) ||
+    (attacker.hasAbility('Sharpness') && move.flags.slicing) ||
+    (attacker.hasAbility('Squall') && move.flags.wind) ||
+    (attacker.hasAbility('Ghost of Hisui') && (defender.status || defender.hasAbility('Comatose')))
   ) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1171,6 +1212,10 @@ export function calculateBPModsSMSSSV(
   {
     bpMods.push(5120);
     move.priority = 1;
+  }
+  if (attacker.hasAbility('Top Spin') && move.flags.spin) {
+    bpMods.push(5324);
+    desc.attackerAbility = attacker.ability;
   }
   if (attacker.hasItem('Punching Glove') && move.flags.punch) {
     bpMods.push(4506);
@@ -1358,6 +1403,7 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Not A Phase') && move.hasType('Dark')) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
     (attacker.hasAbility('Rocky Payload') && move.hasType('Rock')) ||
+    (attacker.hasAbility('Absolute Zero') && move.hasType('Ice')) ||
     (attacker.hasAbility('Infestive') && move.hasType('Poison'))
   ) {
     atMods.push(6144);
@@ -1383,7 +1429,7 @@ export function calculateAtModsSMSSSV(
 
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
       (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
-     (defender.hasAbility('Purifying Salt') && move.hasType('Ghost'))) {
+     ((defender.hasAbility('Purifying Salt') || defender.hasAbility('Purifying Flames')) && move.hasType('Ghost'))) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
   }
@@ -1540,6 +1586,14 @@ export function calculateDfModsSMSSSV(
   } else if (defender.hasAbility('Fur Coat') && hitsPhysical) {
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
+  }
+  else if ((defender.hasAbility('Heat Haze') && field.hasWeather('Sun', 'Harsh Sunshine') && !hitsPhysical) ||
+         (defender.hasAbility('Snow Cloak') && field.hasWeather('Hail', 'Snow') && !hitsPhysical) ||
+         (defender.hasAbility('Rain Coat') && field.hasWeather('Rain', 'Heavy Rain') && hitsPhysical) ||
+         (defender.hasAbility('Sand Veil') && field.hasWeather('Sand') && hitsPhysical)){
+    dfMods.push(6144);
+    desc.defenderAbility = defender.ability;
+    desc.weather = field.weather;
   }
   // Pokemon with "-of " Ability are immune to the opposing "-of " ability
   const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
@@ -1727,6 +1781,11 @@ export function calculateFinalModsSMSSSV(
     (defender.hasAbility('Ice Scales') && move.category === 'Special')
   ) {
     finalMods.push(2048);
+    desc.defenderAbility = defender.ability;
+  }
+
+  if (defender.hasAbility('Fermentation') && field.attackerSide.isConfused) {
+    finalMods.push(3072);
     desc.defenderAbility = defender.ability;
   }
 

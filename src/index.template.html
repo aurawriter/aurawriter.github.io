@@ -492,7 +492,8 @@
                         <option value="Burned">Burned</option>
                         <option value="Paralyzed">Paralyzed</option>
                         <option value="Asleep">Asleep</option>
-                        <option value="Frozen">Frozen</option>
+                        <option value="Frostbitten">Frostbitten</option>
+                        <option value="Drowsy">Drowsy</option>
                     </select>
                     <select aria-label="Toxic counter" class="toxic-counter calc-trigger hide">
                         <option value="1">1/16</option>
@@ -1042,6 +1043,17 @@
                             <td><div class="right" title="Is the Pok&eacute;mon boosted by an ally's Power Spot ability?">
                                 <input aria-describedby="selectPowerSpotInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerSpotR" />
                                 <label class="btn btn-xxwide" for="powerSpotR">Power Spot</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
+                            <td><div class="left" title="Is the attacking Pok&eacute;mon confused?">
+                              <div hidden id="selectConfusedInstruction">Is the attacking Pok&eacute;mon confused?</div>
+                                <input aria-describedby="selectConfusedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="confusedL" />
+                                <label class="btn btn-xxwide" for="confusedL">Confused</label>
+                              </div></td>
+                            <td><div class="right" title="Is the attacking Pok&eacute;mon confused?">
+                                <input aria-describedby="selectConfusedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="confusedR" />
+                                <label class="btn btn-xxwide" for="confusedR">Confused</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">

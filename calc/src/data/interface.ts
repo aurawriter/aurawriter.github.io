@@ -11,7 +11,7 @@ export type ItemName = string & As<'ItemName'>;
 export type MoveName = string & As<'MoveName'>;
 export type SpeciesName = string & As<'SpeciesName'>;
 
-export type StatusName = 'slp' | 'psn' | 'brn' | 'fbt' | 'par' | 'tox' ;
+export type StatusName = 'slp' | 'psn' | 'brn' | 'fbt' | 'par' | 'tox' | 'drw';
 
 export type GameType = 'Singles' | 'Doubles';
 export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty' | 'Draconic' | 'Haunted' | 'Great Equalizer';

@@ -1524,6 +1524,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Ground',
     makesContact: true,
     category: 'Physical',
+    isSpin: true,
   },
   'Dual Chop': {
     bp: 40,
@@ -2654,6 +2655,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     ignoreDefensive: true,
     zp: 160,
+    isSpin: true,
   },
   'Fire Lash': {
     bp: 80,
@@ -2859,6 +2861,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     secondaries: true,
     zp: 185,
     maxPower: 140,
+    isSpin: true,
   },
   'Behemoth Bash': {
     bp: 100,
@@ -3574,6 +3577,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     zp: 195,
     maxPower: 140,
+    isSpin: true,
   },
   'Strange Steam': {
     bp: 90,
@@ -3751,7 +3755,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Draining Kiss': {maxPower: 100},
   'Drain Punch': {maxPower: 90},
   'Dream Eater': {maxPower: 130},
-  'Drill Peck': {maxPower: 130},
+  'Drill Peck': {maxPower: 130, isSpin: true},
   'Drill Run': {maxPower: 130},
   'Dual Chop': {maxPower: 130},
   'Dynamic Punch': {maxPower: 90},
@@ -3782,13 +3786,13 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Fire Lash': {maxPower: 130},
   'Fire Pledge': {maxPower: 130},
   'Fire Punch': {maxPower: 130},
-  'Fire Spin': {maxPower: 90},
+  'Fire Spin': {maxPower: 90, isSpin: true},
   'First Impression': {maxPower: 130},
   Fissure: {maxPower: 130},
   Flail: {maxPower: 130},
   'Flame Burst': {maxPower: 120},
   'Flame Charge': {maxPower: 100},
-  'Flame Wheel': {maxPower: 110},
+  'Flame Wheel': {maxPower: 110,isSpin:true},
   Flamethrower: {maxPower: 130},
   'Flare Blitz': {maxPower: 140},
   'Flash Cannon': {maxPower: 130},
@@ -3984,7 +3988,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Pursuit: {maxPower: 90},
   'Quick Attack': {maxPower: 90},
   Rage: {maxPower: 90},
-  'Rapid Spin': {bp: 50, secondaries: true, maxPower: 100},
+  'Rapid Spin': {bp: 50, secondaries: true, maxPower: 100, isSpin: true},
   'Razor Leaf': {maxPower: 110},
   'Razor Shell': {maxPower: 130},
   'Razor Wind': {maxPower: 130},
@@ -4121,7 +4125,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Water Shuriken': {maxPower: 90},
   'Water Spout': {maxPower: 150},
   'Weather Ball': {maxPower: 130},
-  Whirlpool: {maxPower: 90},
+  Whirlpool: {maxPower: 90,isSpin:true},
   'Wild Charge': {maxPower: 130},
   'Wing Attack': {maxPower: 110},
   'Wood Hammer': {maxPower: 140},
@@ -4418,6 +4422,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 130,
     makesContact: true,
     breaksProtect: true,
+    isSpin: true,
   },
   'Ice Spinner': {
     bp: 80,
@@ -4518,6 +4523,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     secondaries: true,
     target: 'allAdjacentFoes',
+    isSpin: true,
   },
   'Mountain Gale': {
     bp: 100,
@@ -4681,6 +4687,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 180,
     maxPower: 130,
     makesContact: true,
+    isSpin: true,
   },
   'Springtide Storm': {
     bp: 100,
@@ -5155,6 +5162,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 65,
     type: 'Ice',
     category: 'Special',
+    makesContact: true,
   },
   'Lather': 
   {
@@ -5178,6 +5186,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 50,
     type: 'Dark',
     category: 'Physical',
+    makesContact: true,
   },
   'Exposure': {
     bp: 75,
@@ -5226,7 +5235,75 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 25,
     category: 'Physical',
   },
-
+  'Icebreaker': {
+    type: 'Ice',
+    bp: 90,
+    category: 'Physical',
+  },
+  'Clearing Winds': {
+    type: 'Flying',
+    bp: 80,
+    category: 'Special',
+    isWind: true,
+  },
+  'Predation': {
+    type: 'Dragon',
+    bp: 0,
+    category: 'Physical',
+    isBite: true,
+    makesContact: true,
+  },
+  'Terraform Beam': {
+    type: 'Cosmic',
+    bp: 60,
+    category: 'Special',
+  },
+  'Escape Plan': {
+    type: 'Normal',
+    bp: 0,
+    category: 'Status',
+  },
+  'Overwhelm': {
+    type: 'Fighting',
+    bp: 65,
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Selfless Heart': {
+    type: 'Fairy',
+    bp: 0,
+    category: 'Status',
+  },
+  'Snowblind Rush': {
+    type: 'Ice',
+    bp: 100,
+    category: 'Physical',
+    hasCrashDamage: true,
+  },
+  'King\'s Gambit': {
+    type: 'Dark',
+    category: 'Physical',
+    bp: 70,
+  },
+  'Queen\'s Gambit': {
+    type: 'Light',
+    category: 'Special',
+    bp: 40
+  },
+  'Hat Trick': {
+    bp: 20,
+    type: 'Psychic',
+    category: 'Physical',
+    makesContact: true,
+    multihit: 3,
+    zp: 120,
+    maxPower: 140,
+  },
+  'Essence Burst': {
+    bp: 70,
+    type: 'Normal',
+    category: 'Special',
+  }
 };
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
@@ -5300,6 +5377,7 @@ class Move implements I.Move {
     'isSlicing',
     'isWind',
     'isKick',
+    'isSpin',
   ]);
 
   constructor(name: string, data: MoveData, gen: number) {
@@ -5318,6 +5396,7 @@ class Move implements I.Move {
     if (data.isSlicing) this.flags.slicing = 1;
     if (data.isWind) this.flags.wind = 1;
     if (data.isKick) this.flags.kick = 1;
+    if (data.isSpin) this.flags.spin = 1;
     assignWithout(this, data, Move.FLAGS);
 
     this.basePower = data.bp;

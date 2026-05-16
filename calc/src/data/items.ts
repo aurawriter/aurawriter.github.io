@@ -508,7 +508,25 @@ const SV = SS.concat([
   'Meli Berry',
   'Smoggy Rock',
   'Flowery Rock',
-  'Frost Orb'
+  'Frost Orb',
+  'Draco Essence',
+  'Dread Essence',
+  'Earth Essence',
+  'Fist Essence',
+  'Flame Essence',
+  'Icicle Essence',
+  'Insect Essence',
+  'Iron Essence',
+  'Meadow Essence',
+  'Mind Essence',
+  'Nebula Essence',
+  'Pixie Essence',
+  'Radiant Essence',
+  'Sky Essence',
+  'Splash Essence',
+  'Spooky Essence',
+  'Stone Essence',
+  'Zap Essence',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
