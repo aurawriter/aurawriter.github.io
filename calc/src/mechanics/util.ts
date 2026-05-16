@@ -507,6 +507,10 @@ export function getWeightFactor(pokemon: Pokemon) {
     : (pokemon.hasAbility('Light Metal') || pokemon.hasItem('Float Stone')) ? 0.5 : 1;
 }
 
+export function getHeightFactor(pokemon: Pokemon) {
+  return 1; // Placeholder for future abilities/items that modify height
+}
+
 export function countBoosts(gen: Generation, boosts: StatsTable) {
   let sum = 0;
 

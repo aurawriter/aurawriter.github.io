@@ -41,6 +41,7 @@ export interface MoveData {
   readonly isSlicing?: boolean;
   readonly isWind?: boolean;
   readonly isKick?: boolean;
+  readonly isSpin?: boolean;
 }
 
 const RBY: {[name: string]: MoveData} = {
@@ -1806,7 +1807,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     breaksProtect: true,
     category: 'Special',
   },
-  'King\'s Shield': {bp: 0, type: 'Steel', priority: 4},
+  'Royal Shield': {bp: 0, type: 'Steel', priority: 4},
   'Misty Terrain': {bp: 0, type: 'Fairy'},
   'Mystical Fire': {
     bp: 65,
@@ -5143,6 +5144,89 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Cosmic',
     category: 'Status',
   },
+  'Geokinesis': 
+  {
+    bp: 100,
+    type: 'Psychic',
+    category: 'Special',
+  },
+  'Soft Serve':
+  {
+    bp: 65,
+    type: 'Ice',
+    category: 'Special',
+  },
+  'Lather': 
+  {
+    type: 'Water',
+    category: 'Status',
+  },
+  'Short Circuit': 
+  {
+    bp: 100,
+    type: 'Electric',
+    category: 'Physical',
+  },
+  'Foul Foliage':
+  {
+    bp: 70,
+    type: 'Grass',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Checkmate': {
+    bp: 50,
+    type: 'Dark',
+    category: 'Physical',
+  },
+  'Exposure': {
+    bp: 75,
+    type: 'Light',
+    category: 'Special',
+  },
+  'Refine': {
+    type: 'Steel',
+    category: 'Status',
+  },
+  'Eulogy': {
+    type: 'Ghost',
+    category: 'Status',
+  },
+  'Deafening Thrum': {
+    type: 'Bug',
+    category: 'Special',
+    bp: 120,
+  },
+  'Sludge Trap': {
+    type: 'Poison',
+    category: 'Special',
+    bp: 35,
+  },
+  'Iris Gleam': {
+    type: 'Fairy',
+    category: 'Special',
+    bp: 60,
+  },
+  'Evaporate': {
+    type: 'Fire',
+    category: 'Special',
+    bp: 80,
+  },
+  'Rockfall': {
+    type: 'Rock',
+    category: 'Physical',
+    bp: 80,
+  },
+  'Fault Line': {
+    type: 'Ground',
+    category: 'Status',
+  },
+  'Telekinetic Toss': {
+    type: 'Psychic',
+    bp: 25,
+    category: 'Physical',
+  },
+
 };
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);

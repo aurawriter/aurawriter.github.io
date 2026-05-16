@@ -1030,13 +1030,18 @@ function createField() {
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
 	var spikes;
+	var toxicSpikes;
 	if (gen === 2) {
 		spikes = [$("#gscSpikesL").prop("checked") ? 1 : 0, $("#gscSpikesR").prop("checked") ? 1 : 0];
+		toxicSpikes = [0, 0];
 		weather = $("input:radio[name='gscWeather']:checked").val();
 	} else {
 		weather = $("input:radio[name='weather']:checked").val();
 		spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
+		toxicSpikes = [~~$("input:radio[name='toxicSpikesL']:checked").val(), ~~$("input:radio[name='toxicSpikesR']:checked").val()];
 	}
+	var isStickyWeb = [$("#stickyWebL").prop("checked"), $("#stickyWebR").prop("checked")];
+	var isTastyTreats = [$("#tastyTreatsL").prop("checked"), $("#tastyTreatsR").prop("checked")];
 	var steelsurge = [$("#steelsurgeL").prop("checked"), $("#steelsurgeR").prop("checked")];
 	var vinelash = [$("#vinelashL").prop("checked"), $("#vinelashR").prop("checked")];
 	var wildfire = [$("#wildfireL").prop("checked"), $("#wildfireR").prop("checked")];
@@ -1060,7 +1065,8 @@ function createField() {
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i],
+			spikes: spikes[i], toxicSpikes: toxicSpikes[i], isStickyWeb: isStickyWeb[i], isTastyTreats: isTastyTreats[i],
+			isSR: isSR[i], steelsurge: steelsurge[i],
 			vinelash: vinelash[i], wildfire: wildfire[i], cannonade: cannonade[i], volcalith: volcalith[i],
 			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
@@ -1228,6 +1234,12 @@ function clearField() {
 	$("#srR").prop("checked", false);
 	$("#spikesL0").prop("checked", true);
 	$("#spikesR0").prop("checked", true);
+	$("#toxicSpikesL0").prop("checked", true);
+	$("#toxicSpikesR0").prop("checked", true);
+	$("#stickyWebL").prop("checked", false);
+	$("#stickyWebR").prop("checked", false);
+	$("#tastyTreatsL").prop("checked", false);
+	$("#tastyTreatsR").prop("checked", false);
 	$("#gscSpikesL").prop("checked", false);
 	$("#gscSpikesR").prop("checked", false);
 	$("#steelsurgeL").prop("checked", false);

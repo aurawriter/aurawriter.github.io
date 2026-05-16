@@ -14,6 +14,7 @@ export class Pokemon implements State.Pokemon {
 
   types: [I.TypeName] | [I.TypeName, I.TypeName];
   weightkg: number;
+  heightm: number;
 
   level: number;
   gender?: I.GenderName;
@@ -56,6 +57,7 @@ export class Pokemon implements State.Pokemon {
     this.name = options.name || name as I.SpeciesName;
     this.types = this.species.types;
     this.weightkg = this.species.weightkg;
+    this.heightm = this.species.heightm;
 
     this.level = options.level || 100;
     this.gender = options.gender || this.species.gender || 'M';
@@ -79,6 +81,10 @@ export class Pokemon implements State.Pokemon {
     // TODO: clean this up with proper Gigantamax support
     if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
       this.weightkg = gen.species.get(toID(this.species.baseSpecies))!.weightkg;
+    }
+
+    if (this.heightm === 0 && !this.isDynamaxed && this.species.baseSpecies) {
+      this.heightm = gen.species.get(toID(this.species.baseSpecies))!.heightm;
     }
 
     if (gen.num < 3) {

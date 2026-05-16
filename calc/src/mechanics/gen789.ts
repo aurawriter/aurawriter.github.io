@@ -37,6 +37,7 @@ import {
   getQPBoostedStat,
   getMoveEffectiveness,
   getShellSideArmCategory,
+  getHeightFactor,
   getWeightFactor,
   handleFixedDamageMoves,
   isGrounded,
@@ -748,6 +749,11 @@ export function calculateBasePowerSMSSSV(
     break;
   case 'Punishment':
     basePower = Math.min(200, 60 + 20 * countBoosts(gen, defender.boosts));
+    desc.moveBP = basePower;
+    break;
+  case 'Predation':
+    const h = defender.heightm * getHeightFactor(defender);
+    basePower = h <= 1 ? 120 : h <= 2 ? 100 : h <= 3 ? 80 : h <= 4 ? 60 : h <= 5 ? 40 : 20;
     desc.moveBP = basePower;
     break;
   case 'Low Kick':

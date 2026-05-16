@@ -299,6 +299,7 @@ class Specie implements I.Specie {
   readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
   readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg: number;
+  readonly heightm: number;
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
   readonly otherFormes?: I.SpeciesName[];
@@ -312,6 +313,8 @@ class Specie implements I.Specie {
     this.types = species.types;
     this.baseStats = species.baseStats;
     this.weightkg = species.weightkg;
+    const maybeHeight = (species as D.Species & {heightm?: number}).heightm;
+    this.heightm = maybeHeight || 0;
 
     const nfe = !!species.evos?.some((s: string) => exists(dex.species.get(s), dex.gen));
     if (nfe) this.nfe = nfe;

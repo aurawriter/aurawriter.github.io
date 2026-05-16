@@ -95,6 +95,7 @@ export interface MoveFlags {
   slicing?: 1 | 0;
   wind?: 1| 0;
   kick?: 1 | 0;
+  spin?: 1 | 0;
 }
 
 export interface SelfOrSecondaryEffect {
@@ -144,6 +145,7 @@ export interface Specie extends Data<SpeciesName> {
   readonly types: [TypeName] | [TypeName, TypeName];
   readonly baseStats: Readonly<StatsTable>;
   readonly weightkg: number;
+  readonly heightm: number;
   readonly nfe?: boolean;
   readonly gender?: GenderName;
   readonly otherFormes?: SpeciesName[];
