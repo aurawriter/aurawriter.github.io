@@ -42,7 +42,7 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 48,
     heightm: 1.5,
   },
-  Arbok: {types: ['Poison'], bs: {hp: 60, at: 85, df: 69, sp: 80, sl: 65}, weightkg: 65 heightm: 3.5,},
+  Arbok: {types: ['Poison'], bs: {hp: 60, at: 85, df: 69, sp: 80, sl: 65}, weightkg: 65, heightm: 3.5,},
   Arcanine: {
     types: ['Fire'],
     bs: {hp: 90, at: 110, df: 80, sp: 95, sl: 80},
@@ -120,7 +120,7 @@ const RBY: {[name: string]: SpeciesData} = {
     heightm: 1.1,
     nfe: true,
   },
-  Clefable: {types: ['Normal'], bs: {hp: 95, at: 70, df: 73, sp: 60, sl: 85}, weightkg: 40 heightm: 1.3,},
+  Clefable: {types: ['Normal'], bs: {hp: 95, at: 70, df: 73, sp: 60, sl: 85}, weightkg: 40, heightm: 1.3,},
   Clefairy: {
     types: ['Normal'],
     bs: {hp: 70, at: 45, df: 48, sp: 35, sl: 60},
@@ -154,7 +154,7 @@ const RBY: {[name: string]: SpeciesData} = {
     heightm: 0.2,
     nfe: true,
   },
-  Ditto: {types: ['Normal'], bs: {hp: 48, at: 48, df: 48, sp: 48, sl: 48}, weightkg: 4 heightm: 0.3,},
+  Ditto: {types: ['Normal'], bs: {hp: 48, at: 48, df: 48, sp: 48, sl: 48}, weightkg: 4, heightm: 0.3,},
   Dodrio: {
     types: ['Normal', 'Flying'],
     bs: {hp: 60, at: 110, df: 70, sp: 100, sl: 60},
@@ -252,7 +252,7 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 38,
     heightm: 1.2,
   },
-  Flareon: {types: ['Fire'], bs: {hp: 65, at: 130, df: 60, sp: 65, sl: 110}, weightkg: 25 heightm: 0.9,},
+  Flareon: {types: ['Fire'], bs: {hp: 65, at: 130, df: 60, sp: 65, sl: 110}, weightkg: 25, heightm: 0.9,},
   Gastly: {
     types: ['Ghost', 'Poison'],
     bs: {hp: 30, at: 35, df: 30, sp: 80, sl: 100},
@@ -293,7 +293,7 @@ const RBY: {[name: string]: SpeciesData} = {
     heightm: 0.6,
     nfe: true,
   },
-  Golduck: {types: ['Water'], bs: {hp: 80, at: 82, df: 78, sp: 85, sl: 80}, weightkg: 76.6 heightm: 1.7,},
+  Golduck: {types: ['Water'], bs: {hp: 80, at: 82, df: 78, sp: 85, sl: 80}, weightkg: 76.6, heightm: 1.7,},
   Golem: {
     types: ['Rock', 'Ground'],
     bs: {hp: 80, at: 110, df: 130, sp: 45, sl: 55},
@@ -418,7 +418,7 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 80,
     heightm: 2.2,
   },
-  Kingler: {types: ['Water'], bs: {hp: 55, at: 130, df: 115, sp: 75, sl: 50}, weightkg: 60 heightm: 1.3,},
+  Kingler: {types: ['Water'], bs: {hp: 55, at: 130, df: 115, sp: 75, sl: 50}, weightkg: 60, heightm: 1.3,},
   Koffing: {
     types: ['Poison'],
     bs: {hp: 40, at: 65, df: 95, sp: 35, sl: 60},
@@ -498,7 +498,7 @@ const RBY: {[name: string]: SpeciesData} = {
     heightm: 0.5,
     nfe: true,
   },
-  Marowak: {types: ['Ground'], bs: {hp: 60, at: 80, df: 110, sp: 45, sl: 50}, weightkg: 45 heightm: 1,},
+  Marowak: {types: ['Ground'], bs: {hp: 60, at: 80, df: 110, sp: 45, sl: 50}, weightkg: 45, heightm: 1,},
   Meowth: {
     types: ['Normal'],
     bs: {hp: 40, at: 45, df: 35, sp: 90, sl: 40},
@@ -537,7 +537,7 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 54.5,
     heightm: 1.3,
   },
-  Muk: {types: ['Poison'], bs: {hp: 105, at: 105, df: 75, sp: 50, sl: 65}, weightkg: 30 heightm: 1.2,},
+  Muk: {types: ['Poison'], bs: {hp: 105, at: 105, df: 75, sp: 50, sl: 65}, weightkg: 30, heightm: 1.2,},
   Nidoking: {
     types: ['Poison', 'Ground'],
     bs: {hp: 81, at: 92, df: 77, sp: 85, sl: 75},
@@ -623,7 +623,7 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 29.5,
     heightm: 1,
   },
-  Persian: {types: ['Normal'], bs: {hp: 65, at: 70, df: 60, sp: 115, sl: 65}, weightkg: 32 heightm: 1,},
+  Persian: {types: ['Normal'], bs: {hp: 65, at: 70, df: 60, sp: 115, sl: 65}, weightkg: 32, heightm: 1,},
   Pidgeot: {
     types: ['Normal', 'Flying'],
     bs: {hp: 83, at: 80, df: 75, sp: 91, sl: 70},
@@ -651,7 +651,7 @@ const RBY: {[name: string]: SpeciesData} = {
     heightm: 0.4,
     nfe: true,
   },
-  Pinsir: {types: ['Bug'], bs: {hp: 65, at: 125, df: 100, sp: 85, sl: 55}, weightkg: 55 heightm: 1.5,},
+  Pinsir: {types: ['Bug'], bs: {hp: 65, at: 125, df: 100, sp: 85, sl: 55}, weightkg: 55, heightm: 1.5,},
   Poliwag: {
     types: ['Water'],
     bs: {hp: 40, at: 50, df: 40, sp: 90, sl: 40},
@@ -704,7 +704,7 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 30,
     heightm: 0.8,
   },
-  Rapidash: {types: ['Fire'], bs: {hp: 65, at: 100, df: 70, sp: 105, sl: 80}, weightkg: 95 heightm: 1.7,},
+  Rapidash: {types: ['Fire'], bs: {hp: 65, at: 100, df: 70, sp: 105, sl: 80}, weightkg: 95, heightm: 1.7,},
   Raticate: {
     types: ['Normal'],
     bs: {hp: 55, at: 81, df: 60, sp: 97, sl: 50},
@@ -750,8 +750,8 @@ const RBY: {[name: string]: SpeciesData} = {
     weightkg: 56,
     heightm: 1.5,
   },
-  Seadra: {types: ['Water'], bs: {hp: 55, at: 65, df: 95, sp: 85, sl: 95}, weightkg: 25 heightm: 1.2,},
-  Seaking: {types: ['Water'], bs: {hp: 80, at: 92, df: 65, sp: 68, sl: 80}, weightkg: 39 heightm: 1.3,},
+  Seadra: {types: ['Water'], bs: {hp: 55, at: 65, df: 95, sp: 85, sl: 95}, weightkg: 25, heightm: 1.2,},
+  Seaking: {types: ['Water'], bs: {hp: 80, at: 92, df: 65, sp: 68, sl: 80}, weightkg: 39, heightm: 1.3,},
   Seel: {
     types: ['Water'],
     bs: {hp: 65, at: 45, df: 55, sp: 45, sl: 70},
@@ -1090,7 +1090,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Zapdos: {bs: {sa: 125, sd: 90}, gender: 'N'},
   Zubat: {bs: {sa: 30, sd: 40}},
   // gen 2 pokemon
-  Aipom: {types: ['Normal'], bs: {hp: 55, at: 70, df: 55, sa: 40, sd: 55, sp: 85}, weightkg: 11.5 heightm: 0.8,},
+  Aipom: {types: ['Normal'], bs: {hp: 55, at: 70, df: 55, sa: 40, sd: 55, sp: 85}, weightkg: 11.5, heightm: 0.8,},
   Ampharos: {
     types: ['Electric'],
     bs: {hp: 90, at: 75, df: 75, sa: 115, sd: 90, sp: 55},
@@ -1239,7 +1239,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 125.8,
     heightm: 1.2,
   },
-  Furret: {types: ['Normal'], bs: {hp: 85, at: 76, df: 64, sa: 45, sd: 55, sp: 90}, weightkg: 32.5 heightm: 1.8,},
+  Furret: {types: ['Normal'], bs: {hp: 85, at: 76, df: 64, sa: 45, sd: 55, sp: 90}, weightkg: 32.5, heightm: 1.8,},
   Girafarig: {
     types: ['Normal', 'Psychic'],
     bs: {hp: 70, at: 80, df: 65, sa: 90, sd: 65, sp: 85},
@@ -1557,7 +1557,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     heightm: 0.7,
     nfe: true,
   },
-  Smeargle: {types: ['Normal'], bs: {hp: 55, at: 20, df: 35, sa: 20, sd: 45, sp: 75}, weightkg: 58 heightm: 1.2,},
+  Smeargle: {types: ['Normal'], bs: {hp: 55, at: 20, df: 35, sa: 20, sd: 45, sp: 75}, weightkg: 58, heightm: 1.2,},
   Smoochum: {
     types: ['Ice', 'Psychic'],
     bs: {hp: 45, at: 30, df: 15, sa: 85, sd: 65, sp: 65},
@@ -1676,7 +1676,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     heightm: 0.7,
     nfe: true,
   },
-  Umbreon: {types: ['Dark'], bs: {hp: 95, at: 65, df: 110, sa: 60, sd: 130, sp: 65}, weightkg: 27 heightm: 1,},
+  Umbreon: {types: ['Dark'], bs: {hp: 95, at: 65, df: 110, sa: 60, sd: 130, sp: 65}, weightkg: 27, heightm: 1,},
   Unown: {
     types: ['Psychic'],
     bs: {hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 48},
@@ -12004,28 +12004,28 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   dryllor: {
     types: ['Bug','Psychic'],
-    bs: {hp:70, at: 75, df: 110, spa: 130, sd: 60, se: 55},
+    bs: {hp:70, at: 75, df: 110, sa: 130, sd: 60, sp: 55},
     weightkg:38,
     heightm: 1.5,
     abilities: {0: "Swarm"},
   },
   repetapir: {
     types: ['Water'],
-    bs: {hp: 65, at: 90, df: 120, sa: 75, sd: 80, se: 60},
+    bs: {hp: 65, at: 90, df: 120, sa: 75, sd: 80, sp: 60},
     weightkg: 300,
     heightm: 1.1,
     abilities: {0: 'Natural Cure'},
   },
   elecacha: {
     types: ['Electric'],
-    bs: {hp:125,at:110,def:110,sa:60,sd: 140,se:25},
+    bs: {hp:125,at:110,df:110,sa:60,sd: 140,sp:25},
     weightkg: 150,
     heightm: 13.3,
     abilities: {0: 'Klutz'},
   },
   fermentoss: {
     types: ['Grass'],
-    bs: {hp: 80, at: 70,def: 110,sa:125,sd:90,se:40},
+    bs: {hp: 80, at: 70,df: 110,sa:125,sd:90,sp:40},
     weightkg: 100,
     heightm: 2,
     abilities: {0: 'Fermentation'},
