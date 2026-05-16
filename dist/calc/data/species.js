@@ -11603,7 +11603,7 @@ var SV_PATCH = {
         bs: { hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 80 },
         weightkg: 48.4,
         heightm: 1.6,
-        abilities: { 0: 'Queenly Majesty' }
+        abilities: { 0: 'Regal Majesty' }
     },
     'Gallade-Aurora': {
         types: ['Light', 'Fighting'],

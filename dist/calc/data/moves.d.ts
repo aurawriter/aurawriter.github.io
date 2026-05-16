@@ -34,6 +34,7 @@ export interface MoveData {
     readonly isSlicing?: boolean;
     readonly isWind?: boolean;
     readonly isKick?: boolean;
+    readonly isSpin?: boolean;
 }
 export declare const MOVES: {
     [name: string]: MoveData;

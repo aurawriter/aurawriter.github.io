@@ -25,6 +25,9 @@ export declare class Field implements State.Field {
 }
 export declare class Side implements State.Side {
     spikes: number;
+    toxicSpikes: number;
+    isStickyWeb: boolean;
+    isTastyTreats: boolean;
     steelsurge: boolean;
     vinelash: boolean;
     wildfire: boolean;

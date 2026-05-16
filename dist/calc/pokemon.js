@@ -37,6 +37,7 @@ var Pokemon = (function () {
         this.name = options.name || name;
         this.types = this.species.types;
         this.weightkg = this.species.weightkg;
+        this.heightm = this.species.heightm;
         this.level = options.level || 100;
         this.gender = options.gender || this.species.gender || 'M';
         this.ability = options.ability || ((_b = this.species.abilities) === null || _b === void 0 ? void 0 : _b[0]) || undefined;
@@ -55,6 +56,9 @@ var Pokemon = (function () {
         this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
         if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
             this.weightkg = gen.species.get((0, util_1.toID)(this.species.baseSpecies)).weightkg;
+        }
+        if (this.heightm === 0 && !this.isDynamaxed && this.species.baseSpecies) {
+            this.heightm = gen.species.get((0, util_1.toID)(this.species.baseSpecies)).heightm;
         }
         if (gen.num < 3) {
             this.ivs.hp = stats_1.Stats.DVToIV(stats_1.Stats.getHPDV({

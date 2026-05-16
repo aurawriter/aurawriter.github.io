@@ -531,6 +531,11 @@ function calculateBasePowerSMSSSV(gen, attacker, defender, move, field, hasAteAb
             basePower = Math.min(200, 60 + 20 * (0, util_2.countBoosts)(gen, defender.boosts));
             desc.moveBP = basePower;
             break;
+        case 'Predation':
+            var h = defender.heightm * (0, util_2.getHeightFactor)(defender);
+            basePower = h <= 1 ? 120 : h <= 2 ? 100 : h <= 3 ? 80 : h <= 4 ? 60 : h <= 5 ? 40 : 20;
+            desc.moveBP = basePower;
+            break;
         case 'Low Kick':
         case 'Grass Knot':
             var w = defender.weightkg * (0, util_2.getWeightFactor)(defender);

@@ -867,6 +867,47 @@
                                 <label class="btn" for="gscSpikesR">Spikes</label>
                             </div></td>
                         </tr>
+                        <tr class="gen-specific g9">
+                            <div hidden id="selectToxicSpikesInstruction">How many layers of Toxic Spikes are on this side of the field?</div>
+                            <td><div aria-labelledby="selectToxicSpikesInstruction" class="left" role="radiogroup" title="How many layers of Toxic Spikes are on this side of the field?">
+                                <input class="visually-hidden calc-trigger" type="radio" name="toxicSpikesL" value="0" id="toxicSpikesL0" checked="checked" />
+                                <label class="btn btn-xsmall btn-left" for="toxicSpikesL0">0</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="toxicSpikesL" value="1" id="toxicSpikesL1" />
+                                <label class="btn btn-xsmall btn-mid" for="toxicSpikesL1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="toxicSpikesL" value="2" id="toxicSpikesL2" />
+                                <label class="btn btn-wide btn-right" for="toxicSpikesL2">2 Toxic Spikes</label>
+                            </div></td>
+                            <td><div aria-labelledby="selectToxicSpikesInstruction" class="right" role="radiogroup" title="How many layers of Toxic Spikes are on this side of the field?">
+                                <input class="visually-hidden calc-trigger" type="radio" name="toxicSpikesR" value="2" id="toxicSpikesR2" />
+                                <label class="btn btn-wide btn-left" for="toxicSpikesR2">2 Toxic Spikes</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="toxicSpikesR" value="1" id="toxicSpikesR1" />
+                                <label class="btn btn-xsmall btn-mid" for="toxicSpikesR1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="toxicSpikesR" value="0" id="toxicSpikesR0" checked="checked" />
+                                <label class="btn btn-xsmall btn-right" for="toxicSpikesR0">0</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g9">
+                            <div hidden id="selectStickyWebInstruction">Is Sticky Web affecting this side of the field?</div>
+                            <td><div class="left" title="Is Sticky Web affecting this side of the field?">
+                                <input aria-describedby="selectStickyWebInstruction" class="visually-hidden calc-trigger" type="checkbox" id="stickyWebL" />
+                                <label class="btn btn-xwide" for="stickyWebL">Sticky Web</label>
+                            </div></td>
+                            <td><div class="right" title="Is Sticky Web affecting this side of the field?">
+                                <input aria-describedby="selectStickyWebInstruction" class="visually-hidden calc-trigger" type="checkbox" id="stickyWebR" />
+                                <label class="btn btn-xwide" for="stickyWebR">Sticky Web</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g9">
+                            <div hidden id="selectTastyTreatsInstruction">Is Tasty Treats active on this side of the field?</div>
+                            <td><div class="left" title="Is Tasty Treats active on this side of the field?">
+                                <input aria-describedby="selectTastyTreatsInstruction" class="visually-hidden calc-trigger" type="checkbox" id="tastyTreatsL" />
+                                <label class="btn btn-xwide" for="tastyTreatsL">Tasty Treats</label>
+                            </div></td>
+                            <td><div class="right" title="Is Tasty Treats active on this side of the field?">
+                                <input aria-describedby="selectTastyTreatsInstruction" class="visually-hidden calc-trigger" type="checkbox" id="tastyTreatsR" />
+                                <label class="btn btn-xwide" for="tastyTreatsR">Tasty Treats</label>
+                            </div></td>
+                        </tr>
                         <tr>
                             <td><div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
                                 <div hidden id="selectScreenInstruction">Is this Pok&eacute;mon protected by Reflect and/or Light Screen?</div>
@@ -1584,7 +1625,7 @@
     </script>
     <script type="text/javascript" src="./calc/util.js?8fa0c7ff"></script>
     <script type="text/javascript" src="./calc/stats.js?18f67a3d"></script>
-    <script type="text/javascript" src="./calc/data/species.js?ab0e8263"></script>
+    <script type="text/javascript" src="./calc/data/species.js?e1e5020c"></script>
 	 <script type="text/javascript" src="./js/data/sets/gen9.js?88699774"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?ecc4b969"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?319db59c"></script>
@@ -1596,16 +1637,16 @@
     <script type="text/javascript" src="./js/data/sets/gen1.js?f61f8168"></script>
     <script type="text/javascript" src="./calc/data/types.js?68c96dab"></script>
     <script type="text/javascript" src="./calc/data/natures.js?04f00dc5"></script>
-    <script type="text/javascript" src="./calc/data/abilities.js?ac2477b9"></script>
-    <script type="text/javascript" src="./calc/data/moves.js?d6716661"></script>
+    <script type="text/javascript" src="./calc/data/abilities.js?62596afd"></script>
+    <script type="text/javascript" src="./calc/data/moves.js?e30c108d"></script>
     <script type="text/javascript" src="./calc/data/items.js?a9f7d55e"></script>
     <script type="text/javascript" src="./calc/data/index.js?083d2bc9"></script>
     <script type="text/javascript" src="./calc/move.js?48331ad1"></script>
-    <script type="text/javascript" src="./calc/pokemon.js?e0fe71b6"></script>
-    <script type="text/javascript" src="./calc/field.js?8de7a7e8"></script>
+    <script type="text/javascript" src="./calc/pokemon.js?5a394183"></script>
+    <script type="text/javascript" src="./calc/field.js?1de4e7c6"></script>
     <script type="text/javascript" src="./calc/items.js?3cbea98f"></script>
-    <script type="text/javascript" src="./calc/mechanics/util.js?e38e4d91"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen789.js?e70b3fa1"></script>
+    <script type="text/javascript" src="./calc/mechanics/util.js?b5f2df25"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen789.js?eccd8db3"></script>
     <script type="text/javascript" src="./calc/mechanics/gen56.js?c5b0789a"></script>
     <script type="text/javascript" src="./calc/mechanics/gen4.js?ab7837a9"></script>
     <script type="text/javascript" src="./calc/mechanics/gen3.js?5064940a"></script>
@@ -1615,7 +1656,7 @@
     <script type="text/javascript" src="./calc/result.js?d5c7552b"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?27dc19e6"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?7e699166"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?13799446"></script>
     <script type="text/javascript" src="./js/moveset_import.js?60db7f40"></script>
 </div>

@@ -6,6 +6,7 @@ export declare class Pokemon implements State.Pokemon {
     species: I.Specie;
     types: [I.TypeName] | [I.TypeName, I.TypeName];
     weightkg: number;
+    heightm: number;
     level: number;
     gender?: I.GenderName;
     ability?: I.AbilityName;

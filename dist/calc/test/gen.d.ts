@@ -101,6 +101,7 @@ declare class Specie implements I.Specie {
     readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
     readonly baseStats: Readonly<I.StatsTable>;
     readonly weightkg: number;
+    readonly heightm: number;
     readonly nfe?: boolean;
     readonly gender?: I.GenderName;
     readonly otherFormes?: I.SpeciesName[];

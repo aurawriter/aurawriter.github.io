@@ -53,6 +53,9 @@ export declare namespace State {
     }
     interface Side {
         spikes?: number;
+        toxicSpikes?: number;
+        isStickyWeb?: boolean;
+        isTastyTreats?: boolean;
         steelsurge?: boolean;
         vinelash?: boolean;
         wildfire?: boolean;

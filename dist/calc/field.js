@@ -83,6 +83,9 @@ var Side = (function () {
     function Side(side) {
         if (side === void 0) { side = {}; }
         this.spikes = side.spikes || 0;
+        this.toxicSpikes = side.toxicSpikes || 0;
+        this.isStickyWeb = !!side.isStickyWeb;
+        this.isTastyTreats = !!side.isTastyTreats;
         this.steelsurge = !!side.steelsurge;
         this.vinelash = !!side.vinelash;
         this.wildfire = !!side.wildfire;

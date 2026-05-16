@@ -399,6 +399,8 @@ var Specie = (function () {
         this.types = species.types;
         this.baseStats = species.baseStats;
         this.weightkg = species.weightkg;
+        var maybeHeight = species.heightm;
+        this.heightm = maybeHeight || 0;
         var nfe = !!((_a = species.evos) === null || _a === void 0 ? void 0 : _a.some(function (s) { return exists(dex.species.get(s), dex.gen); }));
         if (nfe)
             this.nfe = nfe;
