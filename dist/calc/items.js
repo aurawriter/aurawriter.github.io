@@ -12,64 +12,89 @@ function getItemBoostType(item) {
     switch (item) {
         case 'Draco Plate':
         case 'Dragon Fang':
+        case 'Draco Esence':
             return 'Dragon';
         case 'Dread Plate':
         case 'Black Glasses':
+        case 'Dread Essence':
             return 'Dark';
         case 'Earth Plate':
         case 'Soft Sand':
+        case 'Earth Essence':
             return 'Ground';
         case 'Fist Plate':
         case 'Black Belt':
+        case 'Fist Essence':
             return 'Fighting';
         case 'Flame Plate':
         case 'Charcoal':
+        case 'Flame Essence':
             return 'Fire';
         case 'Icicle Plate':
         case 'Never-Melt Ice':
+        case 'Icicle Essence':
             return 'Ice';
         case 'Insect Plate':
         case 'Silver Powder':
+        case 'Insect Essence':
             return 'Bug';
         case 'Iron Plate':
         case 'Metal Coat':
+        case 'Iron Essence':
             return 'Steel';
         case 'Meadow Plate':
         case 'Rose Incense':
         case 'Miracle Seed':
+        case 'Meadow Essence':
             return 'Grass';
         case 'Mind Plate':
         case 'Odd Incense':
         case 'Twisted Spoon':
+        case 'Mind Essence':
             return 'Psychic';
         case 'Fairy Feather':
         case 'Pixie Plate':
+        case 'Pixie Essence':
             return 'Fairy';
         case 'Sky Plate':
         case 'Sharp Beak':
+        case 'Sky Essence':
             return 'Flying';
         case 'Splash Plate':
         case 'Sea Incense':
         case 'Wave Incense':
         case 'Mystic Water':
+        case 'Splash Essence':
             return 'Water';
         case 'Spooky Plate':
         case 'Spell Tag':
+        case 'Spooky Essence':
             return 'Ghost';
         case 'Stone Plate':
         case 'Rock Incense':
         case 'Hard Stone':
+        case 'Stone Essence':
             return 'Rock';
         case 'Toxic Plate':
         case 'Poison Barb':
+        case 'Toxic Essence':
             return 'Poison';
         case 'Zap Plate':
         case 'Magnet':
+        case 'Zap Essence':
             return 'Electric';
         case 'Silk Scarf':
         case 'Pink Bow':
         case 'Polkadot Bow':
             return 'Normal';
+        case 'Telescope':
+        case 'Nebula Plate':
+        case 'Nebula Essence':
+            return 'Cosmic';
+        case 'Flashlight':
+        case 'Radiant Plate':
+        case 'Radiant Essence':
+            return 'Light';
         default:
             return undefined;
     }

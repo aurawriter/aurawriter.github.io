@@ -104,6 +104,7 @@ var Side = (function () {
         this.isAuroraVeil = !!side.isAuroraVeil;
         this.isBattery = !!side.isBattery;
         this.isPowerSpot = !!side.isPowerSpot;
+        this.isConfused = !!side.isConfused;
         this.isSwitching = side.isSwitching;
     }
     Side.prototype.clone = function () {

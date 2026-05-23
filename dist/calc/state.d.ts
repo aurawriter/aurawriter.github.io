@@ -74,6 +74,7 @@ export declare namespace State {
         isAuroraVeil?: boolean;
         isBattery?: boolean;
         isPowerSpot?: boolean;
+        isConfused?: boolean;
         isSwitching?: 'out' | 'in';
     }
 }

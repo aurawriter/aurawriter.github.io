@@ -492,7 +492,8 @@
                         <option value="Burned">Burned</option>
                         <option value="Paralyzed">Paralyzed</option>
                         <option value="Asleep">Asleep</option>
-                        <option value="Frozen">Frozen</option>
+                        <option value="Frostbitten">Frostbitten</option>
+                        <option value="Drowsy">Drowsy</option>
                     </select>
                     <select aria-label="Toxic counter" class="toxic-counter calc-trigger hide">
                         <option value="1">1/16</option>
@@ -1042,6 +1043,17 @@
                             <td><div class="right" title="Is the Pok&eacute;mon boosted by an ally's Power Spot ability?">
                                 <input aria-describedby="selectPowerSpotInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerSpotR" />
                                 <label class="btn btn-xxwide" for="powerSpotR">Power Spot</label>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
+                            <td><div class="left" title="Is the attacking Pok&eacute;mon confused?">
+                              <div hidden id="selectConfusedInstruction">Is the attacking Pok&eacute;mon confused?</div>
+                                <input aria-describedby="selectConfusedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="confusedL" />
+                                <label class="btn btn-xxwide" for="confusedL">Confused</label>
+                              </div></td>
+                            <td><div class="right" title="Is the attacking Pok&eacute;mon confused?">
+                                <input aria-describedby="selectConfusedInstruction" class="visually-hidden calc-trigger" type="checkbox" id="confusedR" />
+                                <label class="btn btn-xxwide" for="confusedR">Confused</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
@@ -1638,15 +1650,15 @@
     <script type="text/javascript" src="./calc/data/types.js?68c96dab"></script>
     <script type="text/javascript" src="./calc/data/natures.js?04f00dc5"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?62596afd"></script>
-    <script type="text/javascript" src="./calc/data/moves.js?e30c108d"></script>
-    <script type="text/javascript" src="./calc/data/items.js?a9f7d55e"></script>
+    <script type="text/javascript" src="./calc/data/moves.js?70d8a631"></script>
+    <script type="text/javascript" src="./calc/data/items.js?68456aa5"></script>
     <script type="text/javascript" src="./calc/data/index.js?083d2bc9"></script>
     <script type="text/javascript" src="./calc/move.js?48331ad1"></script>
     <script type="text/javascript" src="./calc/pokemon.js?5a394183"></script>
-    <script type="text/javascript" src="./calc/field.js?1de4e7c6"></script>
-    <script type="text/javascript" src="./calc/items.js?3cbea98f"></script>
-    <script type="text/javascript" src="./calc/mechanics/util.js?b5f2df25"></script>
-    <script type="text/javascript" src="./calc/mechanics/gen789.js?eccd8db3"></script>
+    <script type="text/javascript" src="./calc/field.js?816bc960"></script>
+    <script type="text/javascript" src="./calc/items.js?7d22b9b0"></script>
+    <script type="text/javascript" src="./calc/mechanics/util.js?a2f70614"></script>
+    <script type="text/javascript" src="./calc/mechanics/gen789.js?5770912b"></script>
     <script type="text/javascript" src="./calc/mechanics/gen56.js?c5b0789a"></script>
     <script type="text/javascript" src="./calc/mechanics/gen4.js?ab7837a9"></script>
     <script type="text/javascript" src="./calc/mechanics/gen3.js?5064940a"></script>
@@ -1656,7 +1668,7 @@
     <script type="text/javascript" src="./calc/result.js?d5c7552b"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?7e699166"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?e9fcedac"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?13799446"></script>
     <script type="text/javascript" src="./js/moveset_import.js?60db7f40"></script>
 </div>

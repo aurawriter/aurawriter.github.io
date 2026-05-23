@@ -117,6 +117,10 @@ function computeFinalStats(gen, attacker, defender, field) {
                 }
                 finally { if (e_2) throw e_2.error; }
             }
+            if (pokemon.hasStatus('drw')) {
+                pokemon.stats.def = Math.floor(pokemon.stats.def / 2);
+                pokemon.stats.spd = Math.floor(pokemon.stats.spd / 2);
+            }
         }
     }
     catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -184,6 +188,12 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity, isRin
     }
     else if (move.named('Accretion Disk') && type === 'Light') {
         return 2;
+    }
+    else if (move.named('Short Circuit') && type === 'Electric') {
+        return 2;
+    }
+    else if (move.named('Geokinesis')) {
+        return (gen.types.get('rock').effectiveness[type] * gen.types.get('psychic').effectiveness[type]);
     }
     else if (move.named('Flying Press')) {
         return (gen.types.get('fighting').effectiveness[type] *

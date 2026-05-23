@@ -1513,7 +1513,8 @@ var BW_PATCH = {
         bp: 80,
         type: 'Ground',
         makesContact: true,
-        category: 'Physical'
+        category: 'Physical',
+        isSpin: true
     },
     'Dual Chop': {
         bp: 40,
@@ -2637,7 +2638,8 @@ var SM_PATCH = {
         makesContact: true,
         category: 'Physical',
         ignoreDefensive: true,
-        zp: 160
+        zp: 160,
+        isSpin: true
     },
     'Fire Lash': {
         bp: 80,
@@ -2840,7 +2842,8 @@ var SS_PATCH = {
         category: 'Physical',
         secondaries: true,
         zp: 185,
-        maxPower: 140
+        maxPower: 140,
+        isSpin: true
     },
     'Behemoth Bash': {
         bp: 100,
@@ -3555,7 +3558,8 @@ var SS_PATCH = {
         category: 'Physical',
         makesContact: true,
         zp: 195,
-        maxPower: 140
+        maxPower: 140,
+        isSpin: true
     },
     'Strange Steam': {
         bp: 90,
@@ -3733,7 +3737,7 @@ var SS_PATCH = {
     'Draining Kiss': { maxPower: 100 },
     'Drain Punch': { maxPower: 90 },
     'Dream Eater': { maxPower: 130 },
-    'Drill Peck': { maxPower: 130 },
+    'Drill Peck': { maxPower: 130, isSpin: true },
     'Drill Run': { maxPower: 130 },
     'Dual Chop': { maxPower: 130 },
     'Dynamic Punch': { maxPower: 90 },
@@ -3764,13 +3768,13 @@ var SS_PATCH = {
     'Fire Lash': { maxPower: 130 },
     'Fire Pledge': { maxPower: 130 },
     'Fire Punch': { maxPower: 130 },
-    'Fire Spin': { maxPower: 90 },
+    'Fire Spin': { maxPower: 90, isSpin: true },
     'First Impression': { maxPower: 130 },
     Fissure: { maxPower: 130 },
     Flail: { maxPower: 130 },
     'Flame Burst': { maxPower: 120 },
     'Flame Charge': { maxPower: 100 },
-    'Flame Wheel': { maxPower: 110 },
+    'Flame Wheel': { maxPower: 110, isSpin: true },
     Flamethrower: { maxPower: 130 },
     'Flare Blitz': { maxPower: 140 },
     'Flash Cannon': { maxPower: 130 },
@@ -3966,7 +3970,7 @@ var SS_PATCH = {
     Pursuit: { maxPower: 90 },
     'Quick Attack': { maxPower: 90 },
     Rage: { maxPower: 90 },
-    'Rapid Spin': { bp: 50, secondaries: true, maxPower: 100 },
+    'Rapid Spin': { bp: 50, secondaries: true, maxPower: 100, isSpin: true },
     'Razor Leaf': { maxPower: 110 },
     'Razor Shell': { maxPower: 130 },
     'Razor Wind': { maxPower: 130 },
@@ -4103,7 +4107,7 @@ var SS_PATCH = {
     'Water Shuriken': { maxPower: 90 },
     'Water Spout': { maxPower: 150 },
     'Weather Ball': { maxPower: 130 },
-    Whirlpool: { maxPower: 90 },
+    Whirlpool: { maxPower: 90, isSpin: true },
     'Wild Charge': { maxPower: 130 },
     'Wing Attack': { maxPower: 110 },
     'Wood Hammer': { maxPower: 140 },
@@ -4405,7 +4409,8 @@ var SV_PATCH = {
         zp: 180,
         maxPower: 130,
         makesContact: true,
-        breaksProtect: true
+        breaksProtect: true,
+        isSpin: true
     },
     'Ice Spinner': {
         bp: 80,
@@ -4504,7 +4509,8 @@ var SV_PATCH = {
         maxPower: 70,
         makesContact: true,
         secondaries: true,
-        target: 'allAdjacentFoes'
+        target: 'allAdjacentFoes',
+        isSpin: true
     },
     'Mountain Gale': {
         bp: 100,
@@ -4666,7 +4672,8 @@ var SV_PATCH = {
         category: 'Physical',
         zp: 180,
         maxPower: 130,
-        makesContact: true
+        makesContact: true,
+        isSpin: true
     },
     'Springtide Storm': {
         bp: 100,
@@ -5128,7 +5135,8 @@ var SV_PATCH = {
     'Soft Serve': {
         bp: 65,
         type: 'Ice',
-        category: 'Special'
+        category: 'Special',
+        makesContact: true
     },
     'Lather': {
         type: 'Water',
@@ -5148,7 +5156,8 @@ var SV_PATCH = {
     'Checkmate': {
         bp: 50,
         type: 'Dark',
-        category: 'Physical'
+        category: 'Physical',
+        makesContact: true
     },
     'Exposure': {
         bp: 75,
@@ -5196,6 +5205,75 @@ var SV_PATCH = {
         type: 'Psychic',
         bp: 25,
         category: 'Physical'
+    },
+    'Icebreaker': {
+        type: 'Ice',
+        bp: 90,
+        category: 'Physical'
+    },
+    'Clearing Winds': {
+        type: 'Flying',
+        bp: 80,
+        category: 'Special',
+        isWind: true
+    },
+    'Predation': {
+        type: 'Dragon',
+        bp: 0,
+        category: 'Physical',
+        isBite: true,
+        makesContact: true
+    },
+    'Terraform Beam': {
+        type: 'Cosmic',
+        bp: 60,
+        category: 'Special'
+    },
+    'Escape Plan': {
+        type: 'Normal',
+        bp: 0,
+        category: 'Status'
+    },
+    'Overwhelm': {
+        type: 'Fighting',
+        bp: 65,
+        category: 'Physical',
+        makesContact: true
+    },
+    'Selfless Heart': {
+        type: 'Fairy',
+        bp: 0,
+        category: 'Status'
+    },
+    'Snowblind Rush': {
+        type: 'Ice',
+        bp: 100,
+        category: 'Physical',
+        hasCrashDamage: true
+    },
+    'King\'s Gambit': {
+        type: 'Dark',
+        category: 'Physical',
+        bp: 70
+    },
+    'Queen\'s Gambit': {
+        type: 'Light',
+        category: 'Special',
+        bp: 40
+    },
+    'Hat Trick': {
+        bp: 20,
+        type: 'Psychic',
+        category: 'Physical',
+        makesContact: true,
+        multihit: 3,
+        zp: 120,
+        maxPower: 140
+    },
+    'Essence Burst': {
+        bp: 70,
+        type: 'Normal',
+        category: 'Special'
     }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);
@@ -5261,6 +5339,8 @@ var Move = (function () {
             this.flags.wind = 1;
         if (data.isKick)
             this.flags.kick = 1;
+        if (data.isSpin)
+            this.flags.spin = 1;
         (0, util_1.assignWithout)(this, data, Move.FLAGS);
         this.basePower = data.bp;
         if (data.zp)
@@ -5285,6 +5365,7 @@ var Move = (function () {
         'isSlicing',
         'isWind',
         'isKick',
+        'isSpin',
     ]);
     return Move;
 }());
