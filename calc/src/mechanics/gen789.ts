@@ -212,7 +212,7 @@ export function calculateSMSSSV(
     } else if (attacker.name.includes('Ogerpon-Wellspring')) {
       type = 'Water';
     }
-  } else if (move.named('Essence Burst') && attacker.item.includes('Plate')) {
+  } else if (move.named('Essence Burst') && attacker.item && attacker.item.includes('Essence')) {
     const essenceType = getItemBoostType(attacker.item);
     if (essenceType) {
       type = essenceType;
@@ -490,7 +490,7 @@ export function calculateSMSSSV(
   const attackSource = move.named('Foul Play') ? defender : attacker;
   if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
       (move.named('Tera Blast') && attackSource.teraType) ||
-      (move.named('Essence Burst') && attacker.item.includes('Plate')) {
+      (move.named('Essence Burst') && attacker.item && attacker.item.includes('Essence'))) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
