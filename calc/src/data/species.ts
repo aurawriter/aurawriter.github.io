@@ -11842,7 +11842,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Infestive'},
   },
   'Giftrap-Mascot': {
-    types: ['Poison','Ice'],
+    types: ['Poison','Electric'],
     bs: {hp: 86, at: 75, df: 53, sa: 98, sd: 71, sp: 115},
     weightkg: 0.3,
     heightm: 0.3,
